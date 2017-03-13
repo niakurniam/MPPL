@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>Login Example - Semantic</title>
+  <title>HMTCalendar - Login</title>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/components/reset.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/components/site.css">
 

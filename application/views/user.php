@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/style.css"> <!-- Resource style -->
   <script src="<?php echo base_url(); ?>assets/modernizr.js"></script> <!-- Modernizr -->
     
-  <title>Responsive Sidebar Navigation | CodyHouse</title>
+  <title>HMTCalendar - Dashboard</title>
 </head>
 <body>
   <header class="cd-main-header">
@@ -35,7 +35,6 @@
           </a>
 
           <ul>
-
             <li><a href="#0">My Account</a></li>
             <li><a href="#0">Edit Account</a></li>
             <li><a href="#0">Logout</a></li>
@@ -120,8 +119,8 @@
       <h1>Responsive Sidebar Navigation</h1>
     </div> <!-- .content-wrapper -->
   </main> <!-- .cd-main-content -->
-<script src="<?php echo base_url(); ?>dist/jquery-2.1.4.js"></script>
-<script src="<?php echo base_url(); ?>dist/jquery.menu-aim.js"></script>
-<script src="<?php echo base_url(); ?>dist/main.js"></script> <!-- Resource jQuery -->
+<script src="<?php echo base_url(); ?>assets/jquery-2.1.4.js"></script>
+<script src="<?php echo base_url(); ?>assets/jquery.menu-aim.js"></script>
+<script src="<?php echo base_url(); ?>assets/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
