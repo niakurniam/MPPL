@@ -5,6 +5,6 @@ class user_controller extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('user');
+		$this->load->view('user/dashboard');
 	}
 }

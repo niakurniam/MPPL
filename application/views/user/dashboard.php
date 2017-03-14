@@ -30,7 +30,7 @@
         <li><a href="#0">Support</a></li>
         <li class="has-children account">
           <a href="#0">
-            <img src="<?php echo base_url('assets/images/cd-avatar.png'); ?>" alt="avatar">
+            <img src="<?php echo base_url('assets/images/user.png'); ?>" alt="avatar">
             Account
           </a>
 
