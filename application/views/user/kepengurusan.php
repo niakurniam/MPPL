@@ -38,17 +38,13 @@
       padding: 2em 0;
     }
 
-    #show-date{
-      margin-top: -30px;
-    }
-
     #top-table{
-      margin-top: 30px;
+      margin-top: -30px;
     }
 
   </style>
     
-  <title>Dashboard | HMTCalendar</title>
+  <title>Kepengurusan | HMTCalendar</title>
 </head>
 <body>
   <header class="cd-main-header">
@@ -82,10 +78,10 @@
     <nav class="cd-side-nav">
       <ul>
         <li class="cd-label">Menu</li>
-        <li class="has-children overview active">
+        <li class="has-children overview">
           <a href="#0">Dashboard</a>
         </li>
-        <li class="has-children bookmarks">
+        <li class="has-children bookmarks active">
           <a href="#0">Kepengurusan</a>
         </li>
 
@@ -124,43 +120,39 @@
     </nav>
 
     <div class="content-wrapper">
-      <h1>Hari Ini</h1>
-
-       <div id="show-date">
-          <p>Tanggal : <span id="datetime"></span></p>
-       </div>
+      <h1>Kepengurusan</h1>
 
        <div class="column" id="top-table" style="width: 70%">
         <table class="ui celled selectable center aligned table">
           <thead>
-            <th class="center aligned" style="width: 20%">Waktu</th>
-            <th style="width: 35%">Event</th>
-            <th style="width: 20%">Tempat</th>
+            <th class="center aligned" style="width: 35%">Nama Kepengurusan</th>
+            <th style="width: 20%">Tahun Mulai</th>
+            <th style="width: 20%">Tahun Berakhir</th>
           </thead>
           <tbody>
             <tr>
               <td class="center aligned">Tasia</td>
-              <td class="left aligned">12</td>
+              <td>12</td>
               <td>7g</td>
             </tr>
             <tr>
               <td class="center aligned">Ronnie</td>
-              <td class="left aligned">38</td>
+              <td>38</td>
               <td>37g</td>
             </tr>
             <tr>
               <td class="center aligned">Gabriel</td>
-              <td class="left aligned">30</td>
+              <td>30</td>
               <td>46g</td>
             </tr>
             <tr>
               <td class="center aligned">Logan</td>
-              <td class="left aligned">12</td>
+              <td>12</td>
               <td>21g</td>
             </tr>
             <tr>
               <td class="center aligned">Clare</td>
-              <td class="left aligned">39</td>
+              <td>39</td>
               <td>41g</td>
             </tr>
           </tbody>
