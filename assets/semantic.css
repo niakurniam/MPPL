@@ -515,7 +515,7 @@ body {
 }
 
 html {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 body {
@@ -525,7 +525,7 @@ body {
   min-width: 320px;
   background: #FFFFFF;
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 1.6rem;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
   font-smoothing: antialiased;
@@ -23832,7 +23832,7 @@ Floated Menu / Item
   text-transform: '';
   box-shadow: '';
   text-align: '';
-  font-size: 1em;
+  font-size: 12px;
   padding-left: '';
   padding-right: '';
 }

@@ -7,4 +7,5 @@ class user_controller extends CI_Controller {
 	{
 		$this->load->view('user/dashboard');
 	}
+
 }
