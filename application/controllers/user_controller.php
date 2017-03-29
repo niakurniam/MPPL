@@ -13,4 +13,9 @@ class user_controller extends CI_Controller {
 		$this->load->view('user/kepengurusan');
 	}
 
+	public function list_departemen()
+	{
+		$this->load->view('user/departemen');
+	}
+
 }

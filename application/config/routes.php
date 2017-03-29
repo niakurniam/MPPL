@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['user'] = 'user_controller/dashboard';
 $route['user/list_kepengurusan'] = 'user_controller/list_kepengurusan';
+$route['user/list_departemen'] = 'user_controller/list_departemen';

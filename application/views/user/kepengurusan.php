@@ -42,6 +42,11 @@
       margin-top: -30px;
     }
 
+    table#table1 { 
+      margin-left:15%; 
+      margin-right:15%;
+    }
+
   </style>
     
   <title>Kepengurusan | HMTCalendar</title>
@@ -122,10 +127,10 @@
     <div class="content-wrapper">
       <h1>Kepengurusan</h1>
 
-       <div class="column" id="top-table" style="width: 70%">
-        <table class="ui celled selectable center aligned table">
+       <div class="column" id="top-table" style="width: 70%"> 
+        <table class="ui celled selectable center aligned table" id="table1">
           <thead>
-            <th class="center aligned" style="width: 35%">Nama Kepengurusan</th>
+            <th class="center aligned" style="width: 30%">Nama Kepengurusan</th>
             <th style="width: 20%">Tahun Mulai</th>
             <th style="width: 20%">Tahun Berakhir</th>
           </thead>
