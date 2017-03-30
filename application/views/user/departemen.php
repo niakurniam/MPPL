@@ -48,52 +48,52 @@
     }
 
     .ui.selection.dropdown {
-  cursor: pointer;
-  word-wrap: break-word;
-  line-height: 1em;
-  white-space: normal;
-  outline: 0;
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-  min-width: 14em;
-  min-height: 2.71428571em;
-  background: #FFFFFF;
-  display: inline-block;
-  padding: 0.78571429em 2.1em 0.78571429em 1em;
-  color: rgba(0, 0, 0, 0.87);
-  box-shadow: none;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
-  -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
-  transition: box-shadow 0.1s ease, width 0.1s ease;
-}
-.ui.selection.dropdown.visible,
-.ui.selection.dropdown.active {
-  z-index: 10;
-}
-select.ui.dropdown {
-  height: 38px;
-  padding: 0.5em;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  visibility: visible;
-}
-.ui.selection.dropdown > .search.icon,
-.ui.selection.dropdown > .delete.icon,
-.ui.selection.dropdown > .dropdown.icon {
-  cursor: pointer;
-  position: absolute;
-  width: auto;
-  height: auto;
-  line-height: 1.21428571em;
-  top: 0.78571429em;
-  right: 1em;
-  z-index: 3;
-  margin: -0.78571429em;
-  padding: 0.78571429em;
-  opacity: 0.8;
-  -webkit-transition: opacity 0.1s ease;
-  transition: opacity 0.1s ease;
-}
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    min-width: 14em;
+    min-height: 2.71428571em;
+    background: #FFFFFF;
+    display: inline-block;
+    padding: 0.78571429em 2.1em 0.78571429em 1em;
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: none;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: 0.28571429rem;
+    -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
+    transition: box-shadow 0.1s ease, width 0.1s ease;
+  }
+  .ui.selection.dropdown.visible,
+  .ui.selection.dropdown.active {
+    z-index: 10;
+  }
+  select.ui.dropdown {
+    height: 38px;
+    padding: 0.5em;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    visibility: visible;
+  }
+  .ui.selection.dropdown > .search.icon,
+  .ui.selection.dropdown > .delete.icon,
+  .ui.selection.dropdown > .dropdown.icon {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    height: auto;
+    line-height: 1.21428571em;
+    top: 0.78571429em;
+    right: 1em;
+    z-index: 3;
+    margin: -0.78571429em;
+    padding: 0.78571429em;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+  }
 
 /* Compact */
 .ui.compact.selection.dropdown {
