@@ -1,177 +1,322 @@
 <!doctype html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<html class="no-js" lang="en">
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Kepengurusan | HMTCalendar </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <!-- Theme initialization -->
+        <script>
+            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+            {};
+            var themeName = themeSettings.themeName || '';
+            if (themeName)
+            {
+                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
+            }
+            else
+            {
+                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
+            }
+        </script>
+        <style type="text/css">
+            #table-right{
+                margin-left: 50px;
+                margin-right: 50px;
+            }
 
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css"> <!-- Resource style -->
-  <script src="<?php echo base_url(); ?>assets/js/modernizr.js"></script> <!-- Modernizr -->
+            th {
+                text-align: center;
+            }
+        </style>
+    </head>
 
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/components/table.css">
+    <body>
+        <div class="main-wrapper">
+            <div class="app" id="app">
+                <header class="header">
+                    <div class="header-block header-block-collapse hidden-lg-up"> <button class="collapse-btn" id="sidebar-collapse-btn">
+    			<i class="fa fa-bars"></i>
+    		</button> </div>
+                    <div class="header-block header-block-search hidden-sm-down">
+                        <form role="search">
+                            <div class="input-container"> <i class="fa fa-search"></i> <input type="search" placeholder="Search">
+                                <div class="underline"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header-block header-block-buttons">
+                    </div>
+                    <div class="header-block header-block-nav">
+                        <ul class="nav-profile">
+                            <li class="profile dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
+    			      User
+    			    </span> </a>
+                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <aside class="sidebar">
+                    <div class="sidebar-container">
+                        <div class="sidebar-header">
+                            <div class="brand">
+                                <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> SI HMTCalendar </div>
+                        </div>
+                        <nav class="menu">
+                            <ul class="nav metismenu" id="sidebar-menu">
+                                <li>
+                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
+                                </li>
+                                <li class="active">
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                </li>
+                                <li>
+                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="static-tables.html">
+    								Tambah Foto
+    							</a> </li>
+    								</ul>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="">
+            								Tambah Event
+            							</a> </li>
+                                        <li> <a href="cards.html">
+            								Penilaian Event
+            							</a> </li>
+                                        <li> <a href="typography.html">
+            								Tambah Penilaian
+            							</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <footer class="sidebar-footer">
+                        <ul class="nav metismenu" id="customize-menu">
+                            <li>
+                                <ul>
+                                    <li class="customize">
+                                        <div class="customize-item">
+                                            <div class="row customize-header">
+                                                <div class="col-xs-4"> </div>
+                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
+                                                <div class="col-xs-4"> <label class="title">static</label> </div>
+                                            </div>
+                                            <div class="row hidden-md-down">
+                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
+    				                        <span></span>
+    				                    </label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
+    				                        <span></span>
+    				                    </label> </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
+    				                        <span></span>
+    				                    </label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="headerPosition" value="">
+    				                        <span></span>
+    				                    </label> </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
+    				                        <span></span>
+    				                    </label> </div>
+                                                <div class="col-xs-4"> <label>
+    				                        <input class="radio" type="radio" name="footerPosition" value="">
+    				                        <span></span>
+    				                    </label> </div>
+                                            </div>
+                                        </div>
+                                        <div class="customize-item">
+                                            <ul class="customize-colors">
+                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
+                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
+                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
+                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
+                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
+                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
+                            </li>
+                        </ul>
+                    </footer>
+                </aside>
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+                <article class="content static-tables-page">
+                    <div class="title-block">
+                        <h1 class="title"> Kepengurusan </h1>
+                    </div>
+                    <section class="section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card" id="table-right">
+                                    <div class="card-block">
+                                        <section class="example">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 15%">Nama Kepengurusan</th>
+                                                        <th style="width: 10%">Tahun Mulai</th>
+                                                        <th style="width: 10%">Tahun Berakhir</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Mark</td>
+                                                        <td style="text-align: center">Otto</td>
+                                                        <td style="text-align: center">@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jacob</td>
+                                                        <td style="text-align: center">Thornton</td>
+                                                        <td style="text-align: center">@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry</td>
+                                                        <td style="text-align: center">the Bird</td>
+                                                        <td style="text-align: center">@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </article>   
+                <footer class="footer">
+                    <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
+                    <div class="footer-block author">
+                        <ul>
+                            <li> created by <a href="https://github.com/modularcode">ModularCode</a> </li>
+                            <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a> </li>
+                        </ul>
+                    </div>
+                </footer>
+                <div class="modal fade" id="modal-media">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    					<span aria-hidden="true">&times;</span>
+    					<span class="sr-only">Close</span>
+    				</button>
+                                <h4 class="modal-title">Media Library</h4>
+                            </div>
+                            <div class="modal-body modal-tab-container">
+                                <ul class="nav nav-tabs modal-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link" href="#gallery" data-toggle="tab" role="tab">Gallery</a> </li>
+                                    <li class="nav-item"> <a class="nav-link active" href="#upload" data-toggle="tab" role="tab">Upload</a> </li>
+                                </ul>
+                                <div class="tab-content modal-tab-content">
+                                    <div class="tab-pane fade" id="gallery" role="tabpanel">
+                                        <div class="images-container">
+                                            <div class="row"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade active in" id="upload" role="tabpanel">
+                                        <div class="upload-container">
+                                            <div id="dropzone">
+                                                <form action="/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
+                                                    <div class="dz-message-block">
+                                                        <div class="dz-message needsclick"> Drop files here or click to upload. </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Insert Selected</button> </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+                <div class="modal fade" id="confirm-modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    					<span aria-hidden="true">&times;</span>
+    				</button>
+                                <h4 class="modal-title"><i class="fa fa-warning"></i> Alert</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure want to do this?</p>
+                            </div>
+                            <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </div>
+        <!-- Reference block for JS -->
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+        </div>
+        <script>
+            (function(i, s, o, g, r, a, m)
+            {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function()
+                {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-80463319-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script src="<?php echo base_url() ?>js/vendor.js"></script>
+        <script src="<?php echo base_url() ?>js/app.js"></script>
+        <script type="text/javascript">
+		  var dt = new Date();
+		  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+		</script> <!-- Show Current Date -->
 
-  <style type="text/css">
-    html{
-      font-size: 60%;
-    }
+    </body>
 
-    .cd-side-nav > ul > li > a::before {
-    /* icon before item name */
-    background: url(assets/images/cd-nav-icons.svg) no-repeat 0 0;
-    }
-
-    .has-children > a::after {
-      /* arrow icon */
-      background: url(assets/images/cd-arrow.svg);
-    }
-
-    .cd-search::before {
-      /* lens icon */
-      background: url(assets/images/cd-search.svg) no-repeat 0 0;
-    }
-
-    .cd-main-content .content-wrapper h1 {
-      text-align: left;
-      padding: 2em 0;
-    }
-
-    #top-table{
-      margin-top: -30px;
-    }
-
-    table#table1 { 
-      margin-left:15%; 
-      margin-right:15%;
-    }
-
-  </style>
-    
-  <title>Kepengurusan | HMTCalendar</title>
-</head>
-<body>
-  <header class="cd-main-header">
-    <a href="#0" class="cd-logo"><img src="<?php echo base_url(); ?>assets/images/cd-logo.svg" alt="Logo"></a>
-    
-    <div class="cd-search is-hidden">
-      <form action="#0">
-        <input type="search" placeholder="Search...">
-      </form>
-    </div> <!-- cd-search -->
-
-    <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
-
-    <nav class="cd-nav">
-      <ul class="cd-top-nav">
-        <li class="has-children account">
-          <a href="#0">
-            <img src="<?php echo base_url(); ?>assets/images/user.png" alt="avatar">
-            User
-          </a>
-
-          <ul>
-            <li><a href="#0">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header> <!-- .cd-main-header -->
-
-  <main class="cd-main-content">
-    <nav class="cd-side-nav">
-      <ul>
-        <li class="cd-label">Menu</li>
-        <li class="has-children overview">
-          <a href="#0">Dashboard</a>
-        </li>
-        <li class="has-children bookmarks active">
-          <a href="#0">Kepengurusan</a>
-        </li>
-
-        <li class="has-children comments">
-          <a href="#0">Departemen</a>
-        </li>
-
-        <li class="has-children users">
-          <a href="#0">Anggota</a>
-        </li>
-
-        <li class="has-children images">
-          <a href="#0">Gallery</a>
-          
-          <ul>
-            <li><a href="#0">Tambah Foto</a></li>
-          </ul>
-        </li>
-
-        <li class="has-children date">
-          <a href="#0">Event</a>
-          
-          <ul>
-            <li><a href="#0">Tambah Event</a></li>
-            <li><a href="#0">Edit Event</a></li>
-            <li><a href="#0">Penilaian Event</a></li>
-          </ul>
-        </li>
-
-      </ul>
-
-      <ul>
-        <li class="cd-label">Action</li>
-        <li class="action-btn"><a href="#0">+ Button</a></li>
-      </ul>
-    </nav>
-
-    <div class="content-wrapper">
-      <h1>Kepengurusan</h1>
-
-       <div class="column" id="top-table" style="width: 70%"> 
-        <table class="ui celled selectable center aligned table" id="table1">
-          <thead>
-            <th class="center aligned" style="width: 30%">Nama Kepengurusan</th>
-            <th style="width: 20%">Tahun Mulai</th>
-            <th style="width: 20%">Tahun Berakhir</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="center aligned">Tasia</td>
-              <td>12</td>
-              <td>7g</td>
-            </tr>
-            <tr>
-              <td class="center aligned">Ronnie</td>
-              <td>38</td>
-              <td>37g</td>
-            </tr>
-            <tr>
-              <td class="center aligned">Gabriel</td>
-              <td>30</td>
-              <td>46g</td>
-            </tr>
-            <tr>
-              <td class="center aligned">Logan</td>
-              <td>12</td>
-              <td>21g</td>
-            </tr>
-            <tr>
-              <td class="center aligned">Clare</td>
-              <td>39</td>
-              <td>41g</td>
-            </tr>
-          </tbody>
-        </table>
-  </div>
-    </div> <!-- .content-wrapper -->
-  </main> <!-- .cd-main-content -->
-<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.4.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/jquery.menu-aim.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/main.js"></script> <!-- Resource jQuery -->
-<script type="text/javascript">
-  var dt = new Date();
-  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-</script> <!-- Show Current Date -->
-
-</body>
 </html>

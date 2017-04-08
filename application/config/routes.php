@@ -53,6 +53,9 @@ $route['default_controller'] = 'login_controller';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//route baru
 $route['user'] = 'user_controller/dashboard';
-$route['user/list_kepengurusan'] = 'user_controller/list_kepengurusan';
-$route['user/list_departemen'] = 'user_controller/list_departemen';
+$route['list_kepengurusan'] = 'user_controller/list_kepengurusan';
+$route['list_departemen'] = 'user_controller/list_departemen';
+$route['list_anggota'] = 'user_controller/list_anggota';
+$route['gallery'] = 'user_controller/view_gallery';
