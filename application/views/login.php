@@ -113,7 +113,7 @@
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     <h2 class="ui teal image header">
-      <img src="<?php echo base_url('assets/images/logo-hmtcalendar.jpg'); ?>" class="image">
+      <img src="<?php echo base_url('assets/logo-hmtcalendar.jpg'); ?>" class="image">
       <!--<div class="content">
         Log-in to your account
       </div>-->

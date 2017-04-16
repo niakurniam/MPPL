@@ -27,7 +27,7 @@
         <style type="text/css">
             #table-right{
                 margin-left: 15px;
-                margin-right: 15px;
+                margin-right: -15px;
             }
 
             th {
@@ -35,8 +35,9 @@
             }
 
             #dropdown-right{
-                margin-left: 25%;
-                margin-right: -25%;
+                margin-left: 0%;
+                margin-right: 0%;
+            }
         </style>
     </head>
 
@@ -189,58 +190,51 @@
                         <h1 class="title"> Anggota </h1>
                     </div>
                     <section class="section">
-		                <div class="row sameheight-container" id="dropdown-right">
-		                    <div class="col-xs-5">
-		                        <div class="card card-block sameheight-item">
-		                            <div class="title-block">
-		                                <h3 class="title"> Tahun Kepengurusan </h3>
-		                            </div>
-                            		<form role="form">
-                            			<div class="form-group"> <select class="form-control">
-											<option>Option one</option>
-											<option>Option two</option>
-											<option>Option three</option>
-											<option>Option four</option>
-										</select> </div>
-									</form>
-                        		</div>
-                    		</div>
-                    	</div>
-                    </section>
-                            <div class="col-md-12">
-                                <div class="card" id="table-right">
-                                    <div class="card-block">
-                                        <section class="example">
+                        <div class="row sameheight-container" id="dropdown-right">
+                            <div class="col-sm-6">
+                                <div class="card card-block sameheight-item" id="dropdown-right">
+                                    <div class="title-block">
+                                        <h3 class="title"> Tahun Kepengurusan </h3>
+                                    </div>
+                                    <form role="form">
+                                        <div class="form-group"> <select class="form-control">
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select> </div>
+                                    </form>
+                                    <section class="example">
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width: 12%">NRP</th>
-                                                        <th style="width: 16%">Nama</th>
-                                                        <th style="width: 12%">Departemen</th>
+                                                        <th style="width: 20%">NRP</th>
+                                                        <th style="width: 30%">Nama</th>
+                                                        <th style="width: 30%">Departemen</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Mark</td>
-                                                        <td style="text-align: center">Otto</td>
-                                                        <td style="text-align: center">@mdo</td>
+                                                        <td style="text-align: center">1</td>
+                                                        <td>Otto</td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jacob</td>
-                                                        <td style="text-align: center">Thornton</td>
-                                                        <td style="text-align: center">@fat</td>
+                                                        <td style="text-align: center">2</td>
+                                                        <td>Thornton</td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Larry</td>
-                                                        <td style="text-align: center">the Bird</td>
-                                                        <td style="text-align: center">@twitter</td>
+                                                        <td style="text-align: center">3</td>
+                                                        <td>the Bird</td>
+                                                        <td></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </section>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
                     </section>
                 </article>   
                 <footer class="footer">

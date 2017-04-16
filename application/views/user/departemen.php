@@ -27,7 +27,7 @@
         <style type="text/css">
             #table-right{
                 margin-left: 15px;
-                margin-right: 15px;
+                margin-right: -15px;
             }
 
             th {
@@ -35,8 +35,8 @@
             }
 
             #dropdown-right{
-                margin-left: 15px;
-                margin-right: 15px;
+                margin-left: 0%;
+                margin-right: -0%;
             }
         </style>
     </head>
@@ -184,8 +184,8 @@
                         <h1 class="title"> Departemen </h1>
                     </div>
                     <section class="section">
-		                <div class="row sameheight-container">
-		                    <div class="col-md-6">
+		                <div class="row sameheight-container" id="dropdown-right">
+		                    <div class="col-sm-6">
 		                        <div class="card card-block sameheight-item" id="dropdown-right">
 		                            <div class="title-block">
 		                                <h3 class="title"> Tahun Kepengurusan </h3>
@@ -198,16 +198,7 @@
 											<option>Option four</option>
 										</select> </div>
 									</form>
-                        		</div>
-                    		</div>
-                    	</div>
-                    </section>
-                    <section class="section">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card" id="table-right">
-                                    <div class="card-block">
-                                        <section class="example">
+                                    <section class="example">
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
@@ -231,9 +222,9 @@
                                                 </tbody>
                                             </table>
                                         </section>
-                                    </div>
-                                </div>
-                            </div>
+                        		</div>
+                    		</div>
+                    	</div>
                     </section>
                 </article>   
                 <footer class="footer">

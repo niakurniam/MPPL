@@ -28,5 +28,10 @@ class user_controller extends CI_Controller {
 			$this->load->view('user/gallery');
 		}
 
+		public function upload_foto()
+		{
+			$this->load->view('user/upload_foto');
+		}
+
 }
 

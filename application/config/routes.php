@@ -59,3 +59,4 @@ $route['list_kepengurusan'] = 'user_controller/list_kepengurusan';
 $route['list_departemen'] = 'user_controller/list_departemen';
 $route['list_anggota'] = 'user_controller/list_anggota';
 $route['gallery'] = 'user_controller/view_gallery';
+$route['tambah_foto'] = 'user_controller/upload_foto';

@@ -4,12 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
+        <title> Gallery | HMTCalendar </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
         <!-- Theme initialization -->
         <script>
             var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -17,13 +17,28 @@
             var themeName = themeSettings.themeName || '';
             if (themeName)
             {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
             }
             else
             {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
             }
         </script>
+        <style type="text/css">
+            #table-right{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            th {
+                text-align: center;
+            }
+
+            #dropdown-right{
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        </style>
     </head>
 
     <body>
@@ -41,68 +56,15 @@
                         </form>
                     </div>
                     <div class="header-block header-block-buttons">
-                        <a href="https://github.com/modularcode/modular-admin-html" class="btn btn-sm header-btn"> <i class="fa fa-github-alt"></i> <span>View on GitHub</span> </a>
-                        <a href="https://github.com/modularcode/modular-admin-html/stargazers" class="btn btn-sm header-btn"> <i class="fa fa-star"></i> <span>Star Us</span> </a>
-                        <a href="https://github.com/modularcode/modular-admin-html/releases/download/v1.0.1/modular-admin-html-1.0.1.zip" class="btn btn-sm header-btn"> <i class="fa fa-cloud-download"></i> <span>Download .zip</span> </a>
                     </div>
                     <div class="header-block header-block-nav">
                         <ul class="nav-profile">
-                            <li class="notifications new">
-                                <a href="" data-toggle="dropdown"> <i class="fa fa-bell-o"></i> <sup>
-    			      <span class="counter">8</span>
-    			    </sup> </a>
-                                <div class="dropdown-menu notifications-dropdown-menu">
-                                    <ul class="notifications-container">
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Zack Alien</span> pushed new commit: <span class="accent">Fix page load performance issue</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Amaya Hatsumi</span> started new task: <span class="accent">Dashboard UI design.</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Andy Nouman</span> deployed new version of <span class="accent">NodeJS REST Api V3</span> </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <footer>
-                                        <ul>
-                                            <li> <a href="">
-    			            View All
-    			          </a> </li>
-                                        </ul>
-                                    </footer>
-                                </div>
-                            </li>
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
-    			      John Doe
+    			      User
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-user icon"></i> Profile </a>
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-bell icon"></i> Notifications </a>
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-gear icon"></i> Settings </a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
@@ -113,7 +75,7 @@
                     <div class="sidebar-container">
                         <div class="sidebar-header">
                             <div class="brand">
-                                <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> Modular Admin </div>
+                                <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> SI HMTCalendar </div>
                         </div>
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
@@ -121,89 +83,38 @@
                                     <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li> <a href="items-list.html">
-    								Items List
-    							</a> </li>
-                                        <li> <a href="item-editor.html">
-    								Item Editor
-    							</a> </li>
-                                    </ul>
-                                </li>
-                                <li class="active open">
-                                    <a href=""> <i class="fa fa-bar-chart"></i> Charts <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li class="active"> <a href="charts-flot.html">
-    								Flot Charts
-    							</a> </li>
-                                        <li> <a href="charts-morris.html">
-    								Morris Charts
-    							</a> </li>
-                                    </ul>
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-table"></i> Tables <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                </li>
+                                <li class="active">
+                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
+                                        <li> <a href="<?php echo base_url(); ?>gallery">
+                                    Lihat Foto
+                                </a> </li>
                                         <li> <a href="static-tables.html">
-    								Static Tables
-    							</a> </li>
-                                        <li> <a href="responsive-tables.html">
-    								Responsive Tables
-    							</a> </li>
+                                    Tambah Foto
+                                </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="forms.html"> <i class="fa fa-pencil-square-o"></i> Forms </a>
-                                </li>
-                                <li>
-                                    <a href=""> <i class="fa fa-desktop"></i> UI Elements <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="buttons.html">
-    								Buttons
-    							</a> </li>
+                                        <li> <a href="">
+            								Tambah Event
+            							</a> </li>
                                         <li> <a href="cards.html">
-    								Cards
-    							</a> </li>
+            								Penilaian Event
+            							</a> </li>
                                         <li> <a href="typography.html">
-    								Typography
-    							</a> </li>
-                                        <li> <a href="icons.html">
-    								Icons
-    							</a> </li>
-                                        <li> <a href="grid.html">
-    								Grid
-    							</a> </li>
+            								Tambah Penilaian
+            							</a> </li>
                                     </ul>
-                                </li>
-                                <li>
-                                    <a href=""> <i class="fa fa-file-text-o"></i> Pages <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li> <a href="login.html">
-    								Login
-    							</a> </li>
-                                        <li> <a href="signup.html">
-    								Sign Up
-    							</a> </li>
-                                        <li> <a href="reset.html">
-    								Reset
-    							</a> </li>
-                                        <li> <a href="error-404.html">
-    								Error 404 App
-    							</a> </li>
-                                        <li> <a href="error-404-alt.html">
-    								Error 404 Global
-    							</a> </li>
-                                        <li> <a href="error-500.html">
-    								Error 500 App
-    							</a> </li>
-                                        <li> <a href="error-500-alt.html">
-    								Error 500 Global
-    							</a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/modularcode/modular-admin-html"> <i class="fa fa-github-alt"></i> Theme Docs </a>
                                 </li>
                             </ul>
                         </nav>
@@ -271,94 +182,90 @@
                     </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
-                <article class="content charts-flot-page">
+                <article class="content static-tables-page">
                     <div class="title-block">
-                        <h3 class="title"> Charts Flot </h3>
-                        <p class="title-description"> List of sample charts with custom colors </p>
+                        <h1 class="title"> Gallery </h1>
                     </div>
-                    <section class="section">
-                        <div class="row">
+            <section class="section">
+                        <div class="row sameheight-container">
                             <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title"> Bar Chart Example </h3>
-                                        </div>
-                                        <section class="example">
-                                            <div class="flot-chart">
-                                                <div class="flot-chart-content" id="flot-bar-chart"></div>
+                                <div class="card card-block sameheight-item">
+                                    <div class="title-block">
+                                        <h3 class="title"> Tambah Foto </h3>
+                                    </div>
+                                    <form>
+                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select> </div>
+                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select> </div>
+                                        <div class="form-group row"> <label class="col-sm-2 form-control-label text-xs-right">
+                Upload:
+            </label>
+                                <div class="col-sm-10">
+                                    <div class="images-container">
+                                        <div class="image-container">
+                                            <div class="controls">
+                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
                                             </div>
-                                        </section>
+                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg')"></div>
+                                        </div>
+                                        <div class="image-container">
+                                            <div class="controls">
+                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
+                                            </div>
+                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg')"></div>
+                                        </div>
+                                        <div class="image-container">
+                                            <div class="controls">
+                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
+                                                <!--
+                                -->
+                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
+                                            </div>
+                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/eduardo_olv/128.jpg')"></div>
+                                        </div>
+                                        <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
+                                            <div class="image-container new">
+                                                <div class="image"> <i class="fa fa-plus"></i> </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title"> Line Cahrt Example </h3>
-                                        </div>
-                                        <section class="example">
-                                            <div class="flot-chart">
-                                                <div class="flot-chart-content" id="flot-line-chart"></div>
-                                            </div>
-                                        </section>
-                                    </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
+                    Tambah
+                </button> </div>
+                            </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section class="section">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title"> Pie Chart Example </h3>
-                                        </div>
-                                        <section class="example">
-                                            <div class="flot-chart">
-                                                <div class="flot-chart-pie-content" id="flot-pie-chart"></div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title"> Live Chart Example </h3>
-                                        </div>
-                                        <section class="example">
-                                            <div class="flot-chart">
-                                                <div class="flot-chart-content" id="flot-line-chart-moving"></div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title"> Multiple Axes Line Chart Example </h3>
-                                        </div>
-                                        <section class="example">
-                                            <div class="flot-chart">
-                                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </article>
+                </article>   
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">
@@ -453,8 +360,13 @@
             ga('create', 'UA-80463319-2', 'auto');
             ga('send', 'pageview');
         </script>
-        <script src="js/vendor.js"></script>
-        <script src="js/app.js"></script>
+        <script src="<?php echo base_url() ?>js/vendor.js"></script>
+        <script src="<?php echo base_url() ?>js/app.js"></script>
+        <script type="text/javascript">
+		  var dt = new Date();
+		  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+		</script> <!-- Show Current Date -->
+
     </body>
 
 </html>

@@ -202,7 +202,6 @@
                                             <option>Option four</option>
                                         </select> 
                                 </div>
-                                &nbsp &nbsp
                                 <div class="form-group"> <label for="nama_departemen">Departemen</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
