@@ -54,9 +54,22 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //route baru
+//user
 $route['user'] = 'user_controller/dashboard';
 $route['list_kepengurusan'] = 'user_controller/list_kepengurusan';
 $route['list_departemen'] = 'user_controller/list_departemen';
 $route['list_anggota'] = 'user_controller/list_anggota';
 $route['gallery'] = 'user_controller/view_gallery';
 $route['tambah_foto'] = 'user_controller/upload_foto';
+$route['lihat_event'] = 'user_controller/show_event';
+$route['tambah_event'] = 'user_controller/add_event';
+$route['update_event'] = 'user_controller/edit_event';
+$route['penilaian_event'] = 'user_controller/show_penilaian';
+$route['form_penilaian'] = 'user_controller/tambah_penilaian';
+$route['update_penilaian'] = 'user_controller/update_penilaian';
+
+//admin
+$route['admin'] = 'admin_controller/show_dashboard';
+$route['list_departemen_admin'] = 'admin_controller/show_departemen';
+$route['tambah_departemen_admin'] = 'admin_controller/tambah_departemen';
+$route['tambah_kepengurusan_admin'] = 'admin_controller/tambah_kepengurusan';

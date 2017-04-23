@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Gallery | HMTCalendar </title>
+        <title> Event | HMTCalendar </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -91,7 +91,7 @@
                                 <li>
                                     <a href=""> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url(); ?>gallery">
@@ -102,7 +102,7 @@
                                 </a> </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="">
@@ -187,87 +187,85 @@
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
                     <div class="title-block">
-                        <h1 class="title"> Gallery </h1>
+                        <h1 class="title"> Event </h1>
                     </div>
             <section class="section">
-                        <div class="row sameheight-container">
-                            <div class="col-md-6">
-                                <div class="card card-block sameheight-item">
-                                    <div class="title-block">
-                                        <h3 class="title"> Tambah Foto </h3>
-                                    </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
+                <div class="row sameheight-container">
+                    <div class="col-md-12">
+                        <div class="card card-block sameheight-item" id="table-right">
+                        <!--    <div class="title-block">
+                                <h3 class="title"> Inline Forms </h3>
+                            </div> -->
+                        <div class="col-md-12">
+                            <form class="form-inline">
+                                <div class="form-group"> <label for="tahun_kepengurusan">Kepengurusan</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
+                                        </select> 
+                                </div>
+                                <div class="form-group"> <label for="nama_departemen">Departemen</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group row"> <label class="col-sm-2 form-control-label text-xs-right">
-                Upload:
-            </label>
-                                <div class="col-sm-10">
-                                    <div class="images-container">
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg')"></div>
-                                        </div>
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg')"></div>
-                                        </div>
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/eduardo_olv/128.jpg')"></div>
-                                        </div>
-                                        <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
-                                            <div class="image-container new">
-                                                <div class="image"> <i class="fa fa-plus"></i> </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                        </select> 
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Tambah
-                </button> </div>
-                            </div>
-                                    </form>
-                                </div>
+                                &nbsp
+                                <button type="submit" class="btn btn-primary">Cari</button> 
+                            </form>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card" id="table-right">
+                            <div class="card-block">
+                                       <section class="example">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 20%">Event</th>
+                                                        <th style="width: 20%">Tanggal</th>
+                                                        <th style="width: 10%">Waktu</th>
+                                                        <th style="width: 20%">Tempat</th>
+                                                        <th style="width: 10%">Edit</th>
+                                                        <th style="width: 10%">Hapus</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center">1</td>
+                                                        <td>Otto</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">2</td>
+                                                        <td>Thornton</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">3</td>
+                                                        <td>the Bird</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                </section>
                 </article>   
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
