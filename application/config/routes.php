@@ -73,3 +73,6 @@ $route['admin'] = 'admin_controller/show_dashboard';
 $route['list_departemen_admin'] = 'admin_controller/show_departemen';
 $route['tambah_departemen_admin'] = 'admin_controller/tambah_departemen';
 $route['tambah_kepengurusan_admin'] = 'admin_controller/tambah_kepengurusan';
+$route['list_kepengurusan_admin'] = 'admin_controller/show_kepengurusan';
+$route['list_anggota_admin'] = 'admin_controller/show_anggota';
+$route['tambah_anggota_admin'] = 'admin_controller/tambah_anggota';

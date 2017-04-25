@@ -7,4 +7,5 @@ class login_controller extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
+
 }
