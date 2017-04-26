@@ -118,24 +118,29 @@
         Log-in to your account
       </div>-->
     </h2>
-    <form class="ui large form">
+    <?php echo form_open('login_controller/login_cek', array('class'=>'ui large form')); ?>
+    <!-- <form class="ui large form"> -->
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="NRP" placeholder="NRP">
+             <?php echo form_input('NRP', '', array('placeholder'=> 'NRP')); ?>
+            <!-- <input type="text" name="NRP" placeholder="NRP"> -->
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <?php echo form_password('PASSWORD', '', array('placeholder'=> 'Password', 'type'=>'password')); ?>
+            <!-- <input type="password" name="password" placeholder="Password"> -->
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Login</div>
+        <?php echo form_submit('SUBMIT', 'Login', array('class'=>'ui fluid large teal submit button')); ?>
+        <!-- <div class="ui fluid large teal submit button">Login</div> -->
       </div>
 
       <div class="ui error message"></div>
+      <?php echo form_close(); ?>
 
     </form>
     <a style="color: #d32f2f;"><p>&copy; 2017 MPPL-C Kelompok 5</p></a>
