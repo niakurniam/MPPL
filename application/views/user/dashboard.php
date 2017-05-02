@@ -33,6 +33,11 @@
             th {
                 text-align: center;
             }
+
+            .header .header-block-nav .profile .img
+            {
+                background-color: #d7dde4;
+            }
         </style>
     </head>
 
@@ -56,11 +61,11 @@
                         <ul class="nav-profile">
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
+                                    <div class="img" style="background-image: url('assets/user.png')"> </div> <span class="name">
     			      User
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -75,24 +80,24 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li class="active">
-                                    <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_kepengurusan"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_departemen"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li>
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>gallery">
+                                        <li> <a href="<?php echo base_url('gallery'); ?>">
     								Lihat Foto
     							</a> </li>
-                                        <li> <a href="static-tables.html">
+                                        <li> <a href="<?php echo base_url('tambah_foto') ?>">
                                     Tambah Foto
                                 </a> </li>
     								</ul>
@@ -100,6 +105,9 @@
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
+                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
+                                            Lihat Event
+                                        </a> </li>
                                         <li> <a href="">
             								Tambah Event
             							</a> </li>
@@ -197,21 +205,19 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center">Mark</td>
-                                                        <td>Otto</td>
-                                                        <td style="text-align: center">@mdo</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td style="text-align: center">@fat</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td style="text-align: center">@twitter</td>
-                                                    </tr>
+                                                    <?php 
+                                                        foreach ($listevent as $row)
+                                                         {
+                                                            echo "
+                                                                <tr>
+                                                                    <td >$row->jam_mulai - $row->jam_selesai </td>
+                                                                    <td>$row->nama_event</td>
+                                                                    <td >$row->tempat </td>
+                                                                </tr>
+                                                            ";
+                                                        }
+                                                    ?>  
+
                                                 </tbody>
                                             </table>
                                         </section>

@@ -66,11 +66,11 @@
                         <ul class="nav-profile">
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('assets/user.png')"> </div> <span class="name">
-    			      User
+                                    <div class="img" style="background-image: url('assets/user-silhouette.png')"> </div> <span class="name">
+    			      Admin
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -85,24 +85,24 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li class="active">
-                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('gallery'); ?>">
+                                        <li> <a href="<?php echo base_url(); ?>gallery">
                                     Lihat Foto
                                 </a> </li>
-                                        <li class="active"> <a href="<?php echo base_url('tambah_foto'); ?>">
+                                        <li class="active"> <a href="static-tables.html">
                                     Tambah Foto
                                 </a> </li>
                                     </ul>
@@ -110,18 +110,18 @@
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
+                                        <li> <a href="">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="">
-                                            Tambah Event
-                                        </a> </li>
+            								Tambah Event
+            							</a> </li>
                                         <li> <a href="cards.html">
-                                            Penilaian Event
-                                        </a> </li>
+            								Penilaian Event
+            							</a> </li>
                                         <li> <a href="typography.html">
-                                            Tambah Penilaian
-                                        </a> </li>
+            								Tambah Penilaian
+            							</a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -214,9 +214,7 @@
                                             <option>Option three</option>
                                             <option>Option four</option>
                                         </select> </div>
-                                        <div class="form-group row"> <label class="col-sm-2 form-control-label text-xs-right">
-                Upload:
-            </label>
+                                        <div class="form-group row"> <label class="col-sm-2 form-control-label text-xs-right"> Upload: </label>
                                 <div class="col-sm-10">
                                     <div class="images-container">
                                         <div class="image-container">

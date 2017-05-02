@@ -38,6 +38,11 @@
                 margin-left: 15px;
                 margin-right: 15px;
             }
+
+            .header .header-block-nav .profile .img
+            {
+                background-color: #d7dde4;
+            }
         </style>
     </head>
 
@@ -65,7 +70,7 @@
     			      User
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>

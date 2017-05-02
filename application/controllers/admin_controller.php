@@ -38,5 +38,15 @@ class admin_controller extends CI_Controller {
 		$this->load->view('admin/anggota');
 	}
 
+	public function show_gallery()
+	{
+		$this->load->view('admin/gallery');
+	}
+
+	public function upload_foto()
+	{
+		$this->load->view('admin/upload_foto');
+	}
+
 }
 

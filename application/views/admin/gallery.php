@@ -66,11 +66,11 @@
                         <ul class="nav-profile">
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('assets/user.png')"> </div> <span class="name">
-    			      User
+                                    <div class="img" style="background-image: url('assets/user-silhouette.png')"> </div> <span class="name">
+    			      Admin
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -85,43 +85,67 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url(); ?>list_kepengurusan"> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="">
+                                            Lihat Kepengurusan
+                                        </a> </li>
+                                        <li> <a href="">
+                                            Tambah Kepengurusan
+                                        </a> </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url(); ?>list_departemen"> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="">
+                                            Lihat Departemen
+                                        </a> </li>
+                                        <li> <a href="">
+                                            Tambah Departemen
+                                        </a> </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="">
+                                            Lihat Anggota
+                                        </a> </li>
+                                        <li> <a href="">
+                                            Tambah Anggota
+                                        </a> </li>
+                                    </ul>
                                 </li>
                                 <li class="active">
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('gallery'); ?>">
-                                    Lihat Foto
-                                </a> </li>
-                                        <li class="active"> <a href="<?php echo base_url('tambah_foto'); ?>">
+                                        <li class="active"> <a href="<?php echo base_url(); ?>gallery">
+    								Lihat Foto
+    							</a> </li>
+                                        <li> <a href="static-tables.html">
                                     Tambah Foto
                                 </a> </li>
-                                    </ul>
+    								</ul>
                                 </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
+                                        <li> <a href="">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="">
-                                            Tambah Event
-                                        </a> </li>
+            								Tambah Event
+            							</a> </li>
                                         <li> <a href="cards.html">
-                                            Penilaian Event
-                                        </a> </li>
+            								Penilaian Event
+            							</a> </li>
                                         <li> <a href="typography.html">
-                                            Tambah Penilaian
-                                        </a> </li>
+            								Tambah Penilaian
+            							</a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -195,84 +219,69 @@
                         <h1 class="title"> Gallery </h1>
                     </div>
             <section class="section">
-                        <div class="row sameheight-container">
-                            <div class="col-md-8">
-                                <div class="card card-block sameheight-item">
-                                    <div class="title-block">
-                                        <h3 class="title"> Tambah Foto </h3>
-                                    </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
+                <div class="row sameheight-container">
+                    <div class="col-md-12">
+                        <div class="card card-block sameheight-item" id="table-right">
+                        <!--    <div class="title-block">
+                                <h3 class="title"> Inline Forms </h3>
+                            </div> -->
+                        <div class="col-md-12">
+                            <form class="form-inline">
+                                <div class="form-group"> <label for="tahun_kepengurusan">Kepengurusan</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
+                                        </select> 
+                                </div>
+                                <div class="form-group"> <label for="nama_departemen">Departemen</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group row"> <label class="col-sm-2 form-control-label text-xs-right">
-                Upload:
-            </label>
-                                <div class="col-sm-10">
-                                    <div class="images-container">
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg')"></div>
-                                        </div>
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg')"></div>
-                                        </div>
-                                        <div class="image-container">
-                                            <div class="controls">
-                                                <a href="" class="control-btn move"> <i class="fa fa-arrows"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="" class="control-btn star"> <i class="fa"></i> </a>
-                                                <!--
-                                -->
-                                                <a href="#" class="control-btn remove" data-toggle="modal" data-target="#confirm-modal"> <i class="fa fa-trash-o"></i> </a>
-                                            </div>
-                                            <div class="image" style="background-image:url('https://s3.amazonaws.com/uifaces/faces/twitter/eduardo_olv/128.jpg')"></div>
-                                        </div>
-                                        <a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">
-                                            <div class="image-container new">
-                                                <div class="image"> <i class="fa fa-plus"></i> </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                        </select> 
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Tambah
-                </button> </div>
-                            </div>
-                                    </form>
-                                </div>
+                                <div class="checkbox"> <label>
+                                    <input type="checkbox"> Remember me
+                                </label> </div>
+                                &nbsp
+                                <button type="submit" class="btn btn-primary">Cari</button> 
+                            </form>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card" id="table-right">
+                            <div class="card-block">
+                                    <!--    <section class="example">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 1%">No</th>
+                                                        <th style="width: 20%">Departemen</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center">1</td>
+                                                        <td>Otto</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">2</td>
+                                                        <td>Thornton</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">3</td>
+                                                        <td>the Bird</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                </section>
                 </article>   
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>

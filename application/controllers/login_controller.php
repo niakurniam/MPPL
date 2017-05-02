@@ -36,5 +36,11 @@ class login_controller extends CI_Controller {
 				</script>";
 			}		
 	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+        redirect('', 'refresh');
+	}
 }
 

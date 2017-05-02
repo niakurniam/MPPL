@@ -60,7 +60,7 @@
     			      Admin
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="<?php echo base_url('index.php/login_controller/logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -224,21 +224,18 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center">Mark</td>
-                                                        <td>Otto</td>
-                                                        <td style="text-align: center">@mdo</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td style="text-align: center">@fat</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td style="text-align: center">@twitter</td>
-                                                    </tr>
+                                                    <?php 
+                                                        foreach ($listevent as $row)
+                                                         {
+                                                            echo "
+                                                                <tr>
+                                                                    <td >$row->jam_mulai - $row->jam_selesai </td>
+                                                                    <td>$row->nama_event</td>
+                                                                    <td >$row->tempat </td>
+                                                                </tr>
+                                                            ";
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </section>
