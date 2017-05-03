@@ -229,27 +229,18 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">2</td>
-                                                        <td>Thornton</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">3</td>
-                                                        <td>the Bird</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr>
+                                                    <?php 
+                                                        foreach ($listkepengurusan as $row)
+                                                         {
+                                                            echo "
+                                                                <tr>
+                                                                    <td >$row->nama_kepengurusan</td>
+                                                                    <td>$row->tahun_mulai</td>
+                                                                    <td >$row->tahun_berakhir</td>
+                                                                </tr>
+                                                            ";
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </section>

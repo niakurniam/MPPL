@@ -57,7 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['logout'] = 'login_controller/logout';
 //user
 $route['user'] = 'event_controller/list_event_today2';
-$route['list_kepengurusan'] = 'user_controller/list_kepengurusan';
+$route['list_kepengurusan'] = 'kepengurusan_controller/list_kepengurusan2';
 $route['list_departemen'] = 'user_controller/list_departemen';
 $route['list_anggota'] = 'user_controller/list_anggota';
 $route['gallery'] = 'user_controller/view_gallery';
@@ -74,7 +74,7 @@ $route['admin'] = 'event_controller/list_event_today';
 $route['list_departemen_admin'] = 'admin_controller/show_departemen';
 $route['tambah_departemen_admin'] = 'admin_controller/tambah_departemen';
 $route['tambah_kepengurusan_admin'] = 'admin_controller/tambah_kepengurusan';
-$route['list_kepengurusan_admin'] = 'admin_controller/show_kepengurusan';
+$route['list_kepengurusan_admin'] = 'kepengurusan_controller/list_kepengurusan';
 $route['list_anggota_admin'] = 'admin_controller/show_anggota';
 $route['tambah_anggota_admin'] = 'admin_controller/tambah_anggota';
 $route['gallery_admin'] = 'admin_controller/show_gallery';

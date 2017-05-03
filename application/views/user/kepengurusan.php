@@ -204,21 +204,18 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Mark</td>
-                                                        <td style="text-align: center">Otto</td>
-                                                        <td style="text-align: center">@mdo</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jacob</td>
-                                                        <td style="text-align: center">Thornton</td>
-                                                        <td style="text-align: center">@fat</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Larry</td>
-                                                        <td style="text-align: center">the Bird</td>
-                                                        <td style="text-align: center">@twitter</td>
-                                                    </tr>
+                                                    <?php 
+                                                        foreach ($listkepengurusan as $row)
+                                                         {
+                                                            echo "
+                                                                <tr>
+                                                                    <td >$row->nama_kepengurusan</td>
+                                                                    <td>$row->tahun_mulai</td>
+                                                                    <td >$row->tahun_berakhir</td>
+                                                                </tr>
+                                                            ";
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </section>
