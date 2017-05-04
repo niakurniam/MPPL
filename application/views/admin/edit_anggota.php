@@ -83,20 +83,20 @@
                                     <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_kepengurusan"> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="list_kepengurusan_admin">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_kepengurusan_admin">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_departemen"> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="list_departemen_admin">
                                             Lihat Departemen
                                         </a> </li>
                                         <li class="active"> <a href="">
@@ -105,12 +105,12 @@
                                     </ul>
                                 </li>
                                 <li class="active">
-                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="list_anggota_admin">
                                             Lihat Anggota
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_anggota_admin">
                                             Tambah Anggota
                                         </a> </li>
                                     </ul>
