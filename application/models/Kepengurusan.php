@@ -11,5 +11,11 @@ class Kepengurusan extends CI_Model{
 		return $listkepengurusan->result();
 	}
 
+	function tampil_tahun_kepengurusan()
+	{
+		$listtahun = $this->db->query("select tahun_mulai, tahun_berakhir from kepengurusan order by tahun_mulai asc");
+		return $listtahun->result();
+	}
+
 }
 

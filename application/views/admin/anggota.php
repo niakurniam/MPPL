@@ -219,7 +219,7 @@
 		                        <div class="card card-block sameheight-item" id="dropdown-right">
                                     <section class="example">
                                     <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
+                                        <div class="form-group"> <label class="control-label"> Tahun Kepengurusan</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>

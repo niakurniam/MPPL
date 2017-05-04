@@ -195,26 +195,38 @@
                         <h1 class="title"> Anggota </h1>
                     </div>
                     <section class="section">
-                        <div class="row sameheight-container" id="dropdown-right">
-                            <div class="col-sm-8">
+                        <div class="row sameheight-container">
+                            <div class="col-sm-7">
                                 <div class="card card-block sameheight-item" id="dropdown-right">
                                     <div class="title-block">
                                         <h3 class="title"> Tahun Kepengurusan </h3>
                                     </div>
                                     <form role="form">
+<<<<<<< HEAD
                                         <div class="form-group"> <select class="form-control">
                                             <option>2016</option>
                                             <option>2015</option>
                                             <option>2014</option>
                                             <option>2013</option>
                                         </select> </div>
+=======
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option selected>Pilih Tahun Kepengurusan</option>
+                                                <?php 
+                                                    foreach ($listtahun as $row) {
+                                                        echo '<option>'.$row->tahun_mulai.' - '.$row->tahun_berakhir.'</option>';
+                                                    }
+                                                ?>
+                                            </select> 
+                                        </div>
+>>>>>>> 11a8ca4817abb957007460bc2bb15aa9351c037d
                                     </form>
-                                    <section class="example">
-                                            <table class="table table-bordered">
+                                    <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th style="width: 25%">NRP</th>
-                                                        <th style="width: 40%">Nama</th>
+                                                        <th style="width: 45%">Nama</th>
                                                         <th style="width: 40%">Departemen</th>
                                                     </tr>
                                                 </thead>
@@ -236,11 +248,10 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </section>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
+                            </section>
                 </article>   
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
