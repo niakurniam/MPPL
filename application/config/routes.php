@@ -58,8 +58,8 @@ $route['logout'] = 'login_controller/logout';
 //user
 $route['user'] = 'event_controller/list_event_today2';
 $route['list_kepengurusan'] = 'kepengurusan_controller/list_kepengurusan2';
-$route['list_departemen'] = 'user_controller/list_departemen';
-$route['list_anggota'] = 'user_controller/list_anggota';
+$route['list_departemen'] = 'kepengurusan_controller/list_tahun_departemen';
+$route['list_anggota'] = 'kepengurusan_controller/list_tahun_user';
 $route['gallery'] = 'user_controller/view_gallery';
 $route['tambah_foto'] = 'user_controller/upload_foto';
 $route['lihat_event'] = 'user_controller/show_event';

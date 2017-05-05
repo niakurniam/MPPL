@@ -17,4 +17,18 @@ class kepengurusan_controller extends CI_Controller {
 		$this->load->view('user/kepengurusan',$data);
 	}
 
+	public function list_tahun_user()
+	{
+		$data['listtahun'] = $this->Kepengurusan->tampil_tahun_kepengurusan();
+		//print_r($data);
+		$this->load->view('user/anggota',$data);
+	}
+
+	public function list_tahun_departemen()
+	{
+		$data['listtahun'] = $this->Kepengurusan->tampil_tahun_kepengurusan();
+		//print_r($data);
+		$this->load->view('user/departemen', $data);
+	}
+
 }

@@ -202,11 +202,14 @@
 		                                <h3 class="title"> Tahun Kepengurusan </h3>
 		                            </div>
                             		<form role="form">
-                            			<div class="form-group"> <select class="form-control">
-											<option>Option one</option>
-											<option>Option two</option>
-											<option>Option three</option>
-											<option>Option four</option>
+                            			<div class="form-group"> 
+                                        <select class="form-control">
+											<option selected>Pilih Tahun Kepengurusan</option>
+                                                <?php 
+                                                    foreach ($listtahun as $row) {
+                                                        echo '<option>'.$row->tahun_mulai.' - '.$row->tahun_berakhir.'</option>';
+                                                    }
+                                                ?>
 										</select> </div>
 									</form>
                                     <section class="example">

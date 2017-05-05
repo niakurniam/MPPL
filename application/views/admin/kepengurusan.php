@@ -215,7 +215,7 @@
                     </div>
                     <section class="section">
 		                <div class="row sameheight-container" id="dropdown-right">
-		                    <div class="col-sm-6">
+		                    <div class="col-md-12">
 		                        <div class="card card-block sameheight-item" id="dropdown-right">
                                     <section class="example">
                                             <table class="table table-bordered">
