@@ -48,5 +48,35 @@ class admin_controller extends CI_Controller {
 		$this->load->view('admin/upload_foto');
 	}
 
+	public function show_event()
+	{
+		$this->load->view('admin/lihat_event');
+	}
+	
+	public function add_event()
+	{
+		$this->load->view('admin/tambah_event');
+	}
+	
+	public function edit_event()
+	{
+		$this->load->view('admin/update_event');
+	}
+	
+	public function show_penilaian()
+	{
+		$this->load->view('admin/penilaian_event');
+	}
+	
+	public function tambah_penilaian()
+	{
+		$this->load->view('admin/tambah_penilaian');
+	}
+	
+	public function update_penilaian()
+	{
+		$this->load->view('admin/edit_penilaian');
+	}
+
 }
 
