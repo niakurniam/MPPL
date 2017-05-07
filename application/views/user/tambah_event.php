@@ -80,24 +80,24 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li>
-                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>gallery">
+                                        <li> <a href="<?php echo base_url('gallery'); ?>">
                                     Lihat Foto
                                 </a> </li>
-                                        <li> <a href="static-tables.html">
+                                        <li> <a href="<?php echo base_url('tambah_foto') ?>">
                                     Tambah Foto
                                 </a> </li>
                                     </ul>
@@ -105,18 +105,18 @@
                                 <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-            								Tambah Event
-            							</a> </li>
+                                        <li class="active"> <a href="">
+                                            Tambah Event
+                                        </a> </li>
                                         <li> <a href="cards.html">
-            								Penilaian Event
-            							</a> </li>
+                                            Penilaian Event
+                                        </a> </li>
                                         <li> <a href="typography.html">
-            								Tambah Penilaian
-            							</a> </li>
+                                            Tambah Penilaian
+                                        </a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -198,16 +198,20 @@
                                     </div>
                                     <form>
                                         <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            <option selected>Pilih Tahun Kepengurusan</option>
+                                                <?php 
+                                                    foreach ($listtahun as $row) {
+                                                        echo '<option>'.$row->tahun_mulai.' - '.$row->tahun_berakhir.'</option>';
+                                                    }
+                                                ?>
                                         </select> </div>
                                         <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            <option selected>Pilih Departemen</option>
+                                                <?php 
+                                                    foreach ($listdept as $row) {
+                                                        echo '<option>'.$row->nama_departemen.'</option>';
+                                                    }
+                                                ?>
                                         </select> </div>
                                         <div class="form-inline">
                                               <label>Tanggal</label><br>

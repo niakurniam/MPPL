@@ -108,7 +108,7 @@
                                         <li> <a href="<?php echo base_url('lihat_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('tambah_event'); ?>">
             								Tambah Event
             							</a> </li>
                                         <li> <a href="cards.html">
