@@ -80,10 +80,10 @@
                                 <li>
                                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>list_kepengurusan_admin">
+                                        <li> <a href="list_kepengurusan_admin">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_kepengurusan_admin">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
@@ -94,7 +94,7 @@
                                         <li> <a href="list_departemen_admin">
                                             Lihat Departemen
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_departemen_admin">
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>
@@ -105,7 +105,7 @@
                                         <li> <a href="list_anggota_admin">
                                             Lihat Anggota
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_anggota_admin">
                                             Tambah Anggota
                                         </a> </li>
                                     </ul>
@@ -124,17 +124,17 @@
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                       <li> <a href="lihat_event_admin">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-            								Tambah Event
-            							</a> </li>
-                                        <li> <a href="cards.html">
-            								Penilaian Event
-            							</a> </li>
-                                        <li> <a href="typography.html">
-            								Tambah Penilaian
+                                        <li> <a href="tambah_event_admin">
+                                            Tambah Event
+                                        </a> </li>
+                                        <li> <a href="penilaian_event_admin">
+                                            Penilaian Event
+                                        </a> </li>
+                                        <li> <a href="form_penilaian_admin">
+                                            Tambah Penilaian
             							</a> </li>
                                     </ul>
                                 </li>

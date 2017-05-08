@@ -129,16 +129,16 @@
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="lihat_event_admin">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_event_admin">
                                             Tambah Event
                                         </a> </li>
-                                        <li> <a href="cards.html">
+                                        <li> <a href="penilaian_event_admin">
                                             Penilaian Event
                                         </a> </li>
-                                        <li> <a href="typography.html">
+                                        <li> <a href="form_penilaian_admin">
                                             Tambah Penilaian
                                         </a> </li>
                                     </ul>
