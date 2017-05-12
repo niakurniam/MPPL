@@ -220,20 +220,24 @@
                                     <div class="title-block">
                                         <h3 class="title"> Tambah Departemen </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                    <!--<form>-->
+                                    <?php echo form_open('departemen_controller/tambah_departemen'); ?>
+                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control" name="id_kepengurusan">
+                                        <option selected> Pilih Tahun Kepengurusan </option>
+                                            <?php
+                                                foreach ($listkepengurusan as $row) {
+                                                    echo "
+                                                    <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>
+                                                    ";  
+                                                }
+                                            ?>
                                         </select> </div>
-                                        <div class="form-group"> <label class="control-label">Nama Departemen</label> <input type="text" class="form-control boxed"> </div>
+                                        <div class="form-group"> <label class="control-label">Nama Departemen</label> <input type="text" class="form-control boxed" name="nama_departemen"> </div>
                             <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Tambah
+                                <div class="col-sm-10 col-sm-offset-2"> <?php echo form_submit('submit', 'Tambah', array('class'=> 'btn btn-primary') ); ?>
                 </button> </div>
                             </div>
-                                    </form>
+                                    <?php echo form_close(''); ?>
                                 </div>
                             </div>
                         </div>

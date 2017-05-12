@@ -24,6 +24,7 @@
                 document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
             }
         </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <style type="text/css">
             #table-right{
                 margin-left: 15px;
@@ -203,7 +204,7 @@
 		                            </div>
                             		<form role="form">
                             			<div class="form-group"> 
-                                        <select class="form-control">
+                                        <select class="form-control" >
 											<option selected>Pilih Tahun Kepengurusan</option>
                                                 <?php 
                                                     foreach ($listtahun as $row) {

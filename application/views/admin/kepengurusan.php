@@ -80,12 +80,12 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('admin'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
-                                <li  class="active">
+                                <li  class="">
                                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li  class="active"> <a href="list_kepengurusan_admin">
+                                        <li  class="active"> <a href="<?php echo base_url('list_kepengurusan_admin'); ?>">
                                             Lihat Kepengurusan
                                         </a> </li>
                                         <li> <a href="tambah_kepengurusan_admin">
@@ -234,9 +234,11 @@
                                                          {
                                                             echo "
                                                                 <tr>
-                                                                    <td >$row->nama_kepengurusan</td>
+                                                                    <td>$row->nama_kepengurusan</td>
                                                                     <td>$row->tahun_mulai</td>
-                                                                    <td >$row->tahun_berakhir</td>
+                                                                    <td>$row->tahun_berakhir</td>
+                                                                    <td><button a href='' type='button' class='btn btn-info'>Edit</button></td>
+                                                                    <td><button a href='' type='button' class='btn btn-danger'>Hapus</button></td>
                                                                 </tr>
                                                             ";
                                                         }

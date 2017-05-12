@@ -24,6 +24,34 @@
                 document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
             }
         </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // <![CDATA[
+    $(document).ready(function(){      
+        $('#nama_kepengurusan').change(function(){ //any select change on the dropdown with id country trigger this code        
+            $("#nama_departemen > option").remove(); //first of all clear select items
+            var id_kepengurusan = $('#nama_kepengurusan').val();  // here we are taking country id of the selected one.
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/hmtcalendar/admin/tambah_event/"+id_kepengurusan, //here we are calling our user controller and get_cities method with the country_id
+                 
+                success: function(nama_departemen) //we're calling the response json array 'cities'
+                {
+                    $.each(cities,function(id_departemen,nama_departemen) //here we're doing a foeach loop round each city with id as the key and city as the value
+                    {
+                        var opt = $('<option />'); // here we're creating a new select option with for each city
+                        opt.val(id);
+                        opt.text(city);
+                        $('#nama_departemen').append(opt); //here we will append these new select options to a dropdown with the id 'cities'
+                    });
+                }
+                 
+            });
+             
+        });
+    });
+    // ]]>
+        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -197,17 +225,13 @@
                                         <h3 class="title"> Tambah Event </h3>
                                     </div>
                                     <form>
+                                        <?php $kepengurusan['#'] = 'Pilih kepengurusan'; ?>
                                         <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            <?php echo form_dropdown('id_kepengurusan', $kepengurusan, '#', 'id="nama_kepengurusan"'); ?>
                                         </select> </div>
+                                        <?php $departemen['#'] = 'Pilih departemen'; ?>
                                         <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            <?php echo form_dropdown('id_departemen', $departemen, '#', 'id="nama_departemen"'); ?>
                                         </select> </div>
                                         <div class="form-inline">
                                               <label>Tanggal</label><br>

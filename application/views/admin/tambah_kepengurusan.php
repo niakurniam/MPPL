@@ -85,10 +85,10 @@
                                 <li class="active">
                                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li class="active"> <a href="list_kepengurusan_admin">
+                                        <li> <a href="list_kepengurusan_admin">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="tambah_kepengurusan_admin">
+                                        <li class="active"> <a href="tambah_kepengurusan_admin">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
@@ -220,23 +220,24 @@
                                     <div class="title-block">
                                         <h3 class="title"> Tambah Kepengurusan </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Nama Kepengurusan</label> <input type="text" class="form-control boxed"> </div>
+                                    <!--<form>-->
+                                    <?php echo form_open('kepengurusan_controller/tambah_kepengurusan'); ?>
+                                        <div class="form-group"> <label class="control-label">Nama Kepengurusan</label> <input name="nama_kepengurusan" type="text" class="form-control boxed"> </div>
                                         <div class="form-inline">
                                               <label>Tahun Mulai</label><br>
-                                              <input type="number" min="1900" max="2099" step="1" value="Tahun Mulai" class="form-control"/>
+                                              <input name="tahun_mulai" type="number" min="1900" max="2099" step="1" value="Tahun Mulai" class="form-control"/>
                                         </div>
                                         <div class="form-inline">
                                               <label>Tahun Berakhir</label><br>
-                                              <input type="text" size="4" id="datepicker" class="form-control" />
+                                              <input name="tahun_berakhir" type="number" min="1900" max="2099" step="1" value="Tahun Mulai" class="form-control"/>
                                         </div>
                                         <br>
                             <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Tambah
+                                <div class="col-sm-10 col-sm-offset-2"> <!--<button type="submit" class="btn btn-primary">--><?php echo form_submit('submit', 'Tambah', array('class'=> 'btn btn-primary') ); ?>
                 </button> </div>
                             </div>
-                                    </form>
+                                    <?php echo form_close(''); ?>
+                                    <!--</form>-->
                                 </div>
                             </div>
                         </div>
