@@ -99,7 +99,7 @@
                                         <li> <a href="list_departemen_admin">
                                             Lihat Departemen
                                         </a> </li>
-                                        <li class="active"> <a href="">
+                                        <li class="active"> <a href="tambah_departemen_admin">
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>

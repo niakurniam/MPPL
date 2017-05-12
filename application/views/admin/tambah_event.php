@@ -133,17 +133,17 @@
                                 <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="lihat_event_admin">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-            								Tambah Event
-            							</a> </li>
-                                        <li> <a href="cards.html">
-            								Penilaian Event
-            							</a> </li>
-                                        <li> <a href="typography.html">
-            								Tambah Penilaian
+                                         <li class="active"> <a href="tambah_event_admin">
+                                            Tambah Event
+                                        </a> </li>
+                                        <li> <a href="penilaian_event_admin">
+                                            Penilaian Event
+                                        </a> </li>
+                                        <li> <a href="form_penilaian_admin">
+                                            Tambah Penilaian
             							</a> </li>
                                     </ul>
                                 </li>

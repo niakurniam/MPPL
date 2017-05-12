@@ -105,12 +105,12 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="list_anggota_admin">
                                             Lihat Anggota
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_anggota_admin">
                                             Tambah Anggota
                                         </a> </li>
                                     </ul>
