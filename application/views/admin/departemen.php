@@ -220,18 +220,7 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
-<<<<<<< HEAD
-                                <?php echo form_open('departemen_controller/tambah_departemen'); ?>
-                                 <div class="form-group"> 
-                                    <select class="form-control">
-                                     <option selected>Pilih Kepengurusan</option>
-                                     <?php 
-                                     foreach ($ddkepengurusan as $row) {
-                                        echo '<option>'.$row->nama_kepengurusan.'</option>';
-                                    }
 
-                                    ?>
-=======
                                 <?php
                                   $attributes = array('class' => 'form-inline');
                                   echo form_open(base_url()."get_departemen", $attributes);
@@ -243,9 +232,10 @@
                                             echo "
                                               <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
                                             }
-                                      ?>
->>>>>>> 8914fe8fe970806c6314e583ee650455d95a3bb0
+                                            ?>
+
                                 </select>
+
                                 <?php
                                 $submit = array ("name"=>"nama_kepengurusan","type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
                                 echo form_submit($submit);
