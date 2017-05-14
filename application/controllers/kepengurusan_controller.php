@@ -48,9 +48,8 @@ class kepengurusan_controller extends CI_Controller {
 		$data_kepengurusan = array(
 			'nama_kepengurusan'=> $this->input->post('nama_kepengurusan'),    // harus sesuai nama kolom
 			'tahun_mulai'   => $this->input->post('tahun_mulai'),
-			'tahun_berakhir'  => $this->input->post('tahun_berakhir')
+			'tahun_berakhir'  => $this->input->post('tahun_berakhir'));
 
-			); 
 		$this->db->insert('kepengurusan', $data_kepengurusan);
 		redirect(base_url('list_kepengurusan_admin'));
 	}
@@ -63,7 +62,6 @@ class kepengurusan_controller extends CI_Controller {
 			$this->Kepengurusan->hapus_kepengurusan($id);
 			redirect('admin/kepengurusan');
 		}
-		
 	}
 
-}			
+}

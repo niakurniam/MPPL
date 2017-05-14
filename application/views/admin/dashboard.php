@@ -114,13 +114,13 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url(); ?>gallery">
-    								Lihat Foto
-    							</a> </li>
+                          								Lihat Foto
+                          							</a> </li>
                                         <li> <a href="static-tables.html">
-                                    Tambah Foto
-                                </a> </li>
-    								</ul>
-                                </li>
+                                          Tambah Foto
+                                        </a> </li>
+    								               </ul>
+                               </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
@@ -135,7 +135,7 @@
                                         </a> </li>
                                         <li> <a href="form_penilaian_admin">
                                             Tambah Penilaian
-            							</a> </li>
+            							              </a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -154,10 +154,9 @@
                                             </div>
                                             <div class="row hidden-md-down">
                                                 <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
+                                            <div class="col-xs-4"> <label>
+    				                                   <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" ><span></span>
+    				                                </label> </div>
                                                 <div class="col-xs-4"> <label>
     				                        <input class="radio" type="radio" name="sidebarPosition" value="">
     				                        <span></span>
@@ -224,7 +223,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php 
+                                                    <?php
                                                         foreach ($listevent as $row)
                                                          {
                                                             echo "
@@ -243,7 +242,7 @@
                                 </div>
                             </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">
