@@ -232,8 +232,7 @@
                                             echo "
                                               <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
                                             }
-                                            ?>
-
+                                ?>
                                 </select>
 
                                 <?php

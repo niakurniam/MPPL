@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2017 at 07:53 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: 14 Mei 2017 pada 15.59
+-- Versi Server: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `hmtcalendar`
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anggota`
+-- Struktur dari tabel `anggota`
 --
 
-CREATE TABLE IF NOT EXISTS `anggota` (
+CREATE TABLE `anggota` (
   `NRP` varchar(15) NOT NULL,
   `Nama` varchar(50) NOT NULL,
   `password` varchar(10) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `anggota`
+-- Dumping data untuk tabel `anggota`
 --
 
 INSERT INTO `anggota` (`NRP`, `Nama`, `password`, `role`) VALUES
@@ -46,17 +46,17 @@ INSERT INTO `anggota` (`NRP`, `Nama`, `password`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departemen`
+-- Struktur dari tabel `departemen`
 --
 
-CREATE TABLE IF NOT EXISTS `departemen` (
-`id_departemen` int(11) NOT NULL,
+CREATE TABLE `departemen` (
+  `id_departemen` int(11) NOT NULL,
   `id_kepengurusan` int(11) DEFAULT NULL,
   `nama_departemen` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `departemen`
+-- Dumping data untuk tabel `departemen`
 --
 
 INSERT INTO `departemen` (`id_departemen`, `id_kepengurusan`, `nama_departemen`) VALUES
@@ -94,11 +94,11 @@ INSERT INTO `departemen` (`id_departemen`, `id_kepengurusan`, `nama_departemen`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foto`
+-- Struktur dari tabel `foto`
 --
 
-CREATE TABLE IF NOT EXISTS `foto` (
-`id_foto` int(11) NOT NULL,
+CREATE TABLE `foto` (
+  `id_foto` int(11) NOT NULL,
   `id_event` int(11) DEFAULT NULL,
   `nama_foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -106,11 +106,11 @@ CREATE TABLE IF NOT EXISTS `foto` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kegiatan`
+-- Struktur dari tabel `kegiatan`
 --
 
-CREATE TABLE IF NOT EXISTS `kegiatan` (
-`id_event` int(11) NOT NULL,
+CREATE TABLE `kegiatan` (
+  `id_event` int(11) NOT NULL,
   `id_departemen` int(11) DEFAULT NULL,
   `nama_event` varchar(100) DEFAULT NULL,
   `tanggal_mulai` date DEFAULT NULL,
@@ -120,21 +120,38 @@ CREATE TABLE IF NOT EXISTS `kegiatan` (
   `tempat` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `kegiatan`
+--
+
+INSERT INTO `kegiatan` (`id_event`, `id_departemen`, `nama_event`, `tanggal_mulai`, `jam_mulai`, `tanggal_selesai`, `jam_selesai`, `tempat`) VALUES
+(1, 1, 'Kuliah tamu PT Trust Media', '2017-05-15', '10:00:00', '2017-05-15', '12:00:00', 'Aula'),
+(2, 1, 'Kunjungan SMA Pelita Harapan', '2017-05-15', '13:00:00', '2017-05-15', '15:00:00', 'Aula Teknik Informatika'),
+(3, 3, 'Debat panelis CAKAHIMA', '2017-05-15', '16:00:00', '2017-05-16', '18:00:00', NULL),
+(4, 3, 'Tcangkruk', '2017-05-15', '19:00:00', '2017-05-15', '22:00:00', 'Sekretariat HMTC'),
+(5, 8, 'Hari Tenang', '2017-05-14', '07:00:00', '2017-05-14', '20:00:00', 'TC'),
+(6, 9, 'Ngerjain MPPL', '2017-05-14', '10:00:00', '2017-05-14', '17:00:00', 'RPL'),
+(7, 4, 'Ngerjain SE', '2017-05-14', '18:00:00', '2017-05-14', '21:00:00', NULL),
+(8, 7, 'Debat Warga', '2017-05-16', '16:00:00', '2017-05-16', '17:00:00', 'Plaza Baru !'),
+(9, 3, 'Kampanye Terbuka CAKAHIMA', '2017-05-17', '16:00:00', '2017-05-17', '17:00:00', 'Plaza Lama 1'),
+(11, 1, 'Hari Tenang', '2017-05-25', '00:00:00', '2017-05-28', '23:00:00', 'Teknik Informatika'),
+(12, 1, 'Masa Gugatan', '2017-05-31', '12:00:00', '2017-05-31', '19:00:00', 'Teknik Informatika');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kepengurusan`
+-- Struktur dari tabel `kepengurusan`
 --
 
-CREATE TABLE IF NOT EXISTS `kepengurusan` (
-`id_kepengurusan` int(11) NOT NULL,
+CREATE TABLE `kepengurusan` (
+  `id_kepengurusan` int(11) NOT NULL,
   `nama_kepengurusan` varchar(30) DEFAULT NULL,
   `tahun_mulai` varchar(4) DEFAULT NULL,
   `tahun_berakhir` varchar(4) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kepengurusan`
+-- Dumping data untuk tabel `kepengurusan`
 --
 
 INSERT INTO `kepengurusan` (`id_kepengurusan`, `nama_kepengurusan`, `tahun_mulai`, `tahun_berakhir`) VALUES
@@ -146,11 +163,11 @@ INSERT INTO `kepengurusan` (`id_kepengurusan`, `nama_kepengurusan`, `tahun_mulai
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_anggota`
+-- Struktur dari tabel `log_anggota`
 --
 
-CREATE TABLE IF NOT EXISTS `log_anggota` (
-`id_anggota` int(11) NOT NULL,
+CREATE TABLE `log_anggota` (
+  `id_anggota` int(11) NOT NULL,
   `NRP_fk` varchar(15) NOT NULL,
   `id_departemen_fk` int(11) NOT NULL,
   `jabatan` varchar(30) NOT NULL
@@ -159,11 +176,11 @@ CREATE TABLE IF NOT EXISTS `log_anggota` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penilaian`
+-- Struktur dari tabel `penilaian`
 --
 
-CREATE TABLE IF NOT EXISTS `penilaian` (
-`id_penilaian` int(11) NOT NULL,
+CREATE TABLE `penilaian` (
+  `id_penilaian` int(11) NOT NULL,
   `id_event` int(11) DEFAULT NULL,
   `indikator` varchar(100) DEFAULT NULL,
   `bobot` float DEFAULT NULL,
@@ -173,16 +190,16 @@ CREATE TABLE IF NOT EXISTS `penilaian` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Struktur dari tabel `role`
 --
 
-CREATE TABLE IF NOT EXISTS `role` (
-`id_role` int(11) NOT NULL,
+CREATE TABLE `role` (
+  `id_role` int(11) NOT NULL,
   `nama` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `role`
+-- Dumping data untuk tabel `role`
 --
 
 INSERT INTO `role` (`id_role`, `nama`) VALUES
@@ -197,49 +214,59 @@ INSERT INTO `role` (`id_role`, `nama`) VALUES
 -- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
- ADD PRIMARY KEY (`NRP`), ADD KEY `role` (`role`), ADD KEY `NRP` (`NRP`);
+  ADD PRIMARY KEY (`NRP`),
+  ADD KEY `role` (`role`),
+  ADD KEY `NRP` (`NRP`);
 
 --
 -- Indexes for table `departemen`
 --
 ALTER TABLE `departemen`
- ADD PRIMARY KEY (`id_departemen`), ADD KEY `id_kepengurusan` (`id_kepengurusan`), ADD KEY `id_departemen` (`id_departemen`);
+  ADD PRIMARY KEY (`id_departemen`),
+  ADD KEY `id_kepengurusan` (`id_kepengurusan`),
+  ADD KEY `id_departemen` (`id_departemen`);
 
 --
 -- Indexes for table `foto`
 --
 ALTER TABLE `foto`
- ADD PRIMARY KEY (`id_foto`), ADD KEY `id_event` (`id_event`);
+  ADD PRIMARY KEY (`id_foto`),
+  ADD KEY `id_event` (`id_event`);
 
 --
 -- Indexes for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
- ADD PRIMARY KEY (`id_event`), ADD KEY `id_departemen` (`id_departemen`);
+  ADD PRIMARY KEY (`id_event`),
+  ADD KEY `id_departemen` (`id_departemen`);
 
 --
 -- Indexes for table `kepengurusan`
 --
 ALTER TABLE `kepengurusan`
- ADD PRIMARY KEY (`id_kepengurusan`);
+  ADD PRIMARY KEY (`id_kepengurusan`);
 
 --
 -- Indexes for table `log_anggota`
 --
 ALTER TABLE `log_anggota`
- ADD PRIMARY KEY (`id_anggota`), ADD KEY `NRP_fk` (`NRP_fk`), ADD KEY `id_anggota` (`id_anggota`), ADD KEY `id_departemen_fk` (`id_departemen_fk`);
+  ADD PRIMARY KEY (`id_anggota`),
+  ADD KEY `NRP_fk` (`NRP_fk`),
+  ADD KEY `id_anggota` (`id_anggota`),
+  ADD KEY `id_departemen_fk` (`id_departemen_fk`);
 
 --
 -- Indexes for table `penilaian`
 --
 ALTER TABLE `penilaian`
- ADD PRIMARY KEY (`id_penilaian`), ADD KEY `id_event` (`id_event`);
+  ADD PRIMARY KEY (`id_penilaian`),
+  ADD KEY `id_event` (`id_event`);
 
 --
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
- ADD PRIMARY KEY (`id_role`);
+  ADD PRIMARY KEY (`id_role`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -249,77 +276,77 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
-MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `kepengurusan`
 --
 ALTER TABLE `kepengurusan`
-MODIFY `id_kepengurusan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_kepengurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `log_anggota`
 --
 ALTER TABLE `log_anggota`
-MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `penilaian`
 --
 ALTER TABLE `penilaian`
-MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `anggota`
+-- Ketidakleluasaan untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-ADD CONSTRAINT `anggota_ibfk_1` FOREIGN KEY (`role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `anggota_ibfk_1` FOREIGN KEY (`role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `departemen`
+-- Ketidakleluasaan untuk tabel `departemen`
 --
 ALTER TABLE `departemen`
-ADD CONSTRAINT `departemen_ibfk_1` FOREIGN KEY (`id_kepengurusan`) REFERENCES `kepengurusan` (`id_kepengurusan`);
+  ADD CONSTRAINT `departemen_ibfk_1` FOREIGN KEY (`id_kepengurusan`) REFERENCES `kepengurusan` (`id_kepengurusan`);
 
 --
--- Constraints for table `foto`
+-- Ketidakleluasaan untuk tabel `foto`
 --
 ALTER TABLE `foto`
-ADD CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `kegiatan` (`id_event`);
+  ADD CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `kegiatan` (`id_event`);
 
 --
--- Constraints for table `kegiatan`
+-- Ketidakleluasaan untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
-ADD CONSTRAINT `kegiatan_ibfk_1` FOREIGN KEY (`id_departemen`) REFERENCES `departemen` (`id_departemen`);
+  ADD CONSTRAINT `kegiatan_ibfk_1` FOREIGN KEY (`id_departemen`) REFERENCES `departemen` (`id_departemen`);
 
 --
--- Constraints for table `log_anggota`
+-- Ketidakleluasaan untuk tabel `log_anggota`
 --
 ALTER TABLE `log_anggota`
-ADD CONSTRAINT `log_anggota_ibfk_1` FOREIGN KEY (`NRP_fk`) REFERENCES `anggota` (`NRP`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `log_anggota_ibfk_2` FOREIGN KEY (`id_departemen_fk`) REFERENCES `departemen` (`id_departemen`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `log_anggota_ibfk_1` FOREIGN KEY (`NRP_fk`) REFERENCES `anggota` (`NRP`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `log_anggota_ibfk_2` FOREIGN KEY (`id_departemen_fk`) REFERENCES `departemen` (`id_departemen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `penilaian`
+-- Ketidakleluasaan untuk tabel `penilaian`
 --
 ALTER TABLE `penilaian`
-ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `kegiatan` (`id_event`);
+  ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `kegiatan` (`id_event`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

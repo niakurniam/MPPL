@@ -80,16 +80,16 @@ Fadmin<!doctype html>
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="list_kepengurusann"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="list_departemen"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="list_anggota"> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li>
                                     <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
@@ -105,16 +105,16 @@ Fadmin<!doctype html>
                                 <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="lihat_event">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_event">
             								Tambah Event
             							</a> </li>
-                                        <li> <a href="cards.html">
+                                        <li> <a href="penilaian_event">
             								Penilaian Event
             							</a> </li>
-                                        <li> <a href="typography.html">
+                                        <li> <a href="tambah_event">
             								Tambah Penilaian
             							</a> </li>
                                     </ul>
