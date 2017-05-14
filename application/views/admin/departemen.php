@@ -220,24 +220,27 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
-                                <form class="form-inline" method="post" action="">
-                                 <div class="form-group"> 
-                                    <select class="form-control">
-                                     <option selected>Pilih Kepengurusan</option>
-                                     <?php 
-                                     foreach ($ddkepengurusan as $row) {
-                                        echo '<option>'.$row->nama_kepengurusan.'</option>';
-                                    }
+                                <!--<form class="form-inline">-->
+                                <?php
+                                  $attributes = array('class' => 'form-inline');
+                                  echo form_open('departemen_controller/get_tahun', $attributes); ?>
+                                 <div class="form-group">
+                                    <select class="form-control" name="id_kepengurusan">
+                                     <option value= '0'>Pilih Kepengurusan</option>
+                                     <?php foreach ($listkepengurusan as $row) {
+                                            echo "
+                                              <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
+                                            }
 
-                                    ?>
+                                      ?>
                                 </select>
                                 <?php
-                                $submit = array ("name"=>"nama_kepengurusan","type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
-                                echo form_submit($submit);
+                                  $submit = array ("type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
+                                  echo form_submit($submit);
                                 ?>
                                 <!--<button type="submit" class="btn btn-primary">Cari</button> -->
                             </div>
-                        </form>
+                        <?php echo form_close(''); ?>
                         <br>
                         <section class="example">
                             <table class="table table-bordered">
@@ -249,39 +252,15 @@
                                         <th style="width: 10%">Hapus</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                                <!--    <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr> -->
-                                                    <?php
-                                                    if (isset($id)) {
-                                                        echo "<p><u>Result</u></p>";
-                                                        if ($id == 'No record found !') {
-                                                            echo $id;
-                                                        } 
-                                                        else {
-                                                            foreach ($id as $value) {
-                                                                echo '<tr>' . 
-                                                                '<td style="text-align: center">' . $value->id_departemen . '</td>' . 
-                                                                '<td>' . $value->nama_departemen . '</td>' . 
-                                                              /*  '<td>' . $value->emp_date_of_join . '</td>' . 
-                                                              '<td>' . $value->emp_address . '</td>' . */
-                                                              '</tr>';
-                                                          }
-                                                      }
-                                                  }
-                                                  ?>
-                                              </tbody>
-                                          </table>
-                                      </section>
+                                <tbod>
+                               </tbody>
+                           </table>
+                        </section>
                                   </div>
                               </div>
                           </div>
                       </section>
-                  </article>   
+                  </article>
                   <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

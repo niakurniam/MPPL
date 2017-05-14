@@ -207,7 +207,7 @@
                                   echo form_open(base_url()."show_departemen", $attributes); ?>
                             			<div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
-											                <option selected value="0">Pilih Tahun Kepengurusan</option>
+											                <option selected value='0'>Pilih Tahun Kepengurusan</option>
                                         <?php
                                         foreach ($listkepengurusan as $row) {
                                           echo "<option value=$row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
@@ -224,12 +224,25 @@
                                     <section class="example">
                                             <table class="table table-bordered">
                                                 <thead>
-                                                    <tr>
-                                                        <th style="width: 1%">No</th>
                                                         <th style="width: 20%">Departemen</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                  <?php if(count($listdepartemen) > 0){
+                                                    foreach ($listdepartemen as $row) {
+                                                      echo "
+                                                      <tr>
+                                                          <td>$row->nama_departemen</td>
+                                                      </tr>";}
+                                                  }
+                                                  else{
+                                                    echo "
+                                                    <tr>
+                                                      <p style='color:red; text-align: center;'> Data tidak ditemukan! </p>
+                                                    </tr>";
+                                                  }
+
+                                                  ?>
                                                 </tbody>
                                             </table>
                                     </section>

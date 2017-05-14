@@ -58,7 +58,8 @@ $route['logout'] = 'login_controller/logout';
 //user
 $route['user'] = 'event_controller/list_event_today2';
 $route['list_kepengurusan'] = 'kepengurusan_controller/show_kepengurusan2';
-$route['list_departemen'] = 'kepengurusan_controller/list_tahun_departemen';
+$route['list_departemen'] = 'departemen_controller/index';
+$route['show_departemen'] = 'departemen_controller/get_tahun';
 $route['list_anggota'] = 'kepengurusan_controller/list_tahun_user';
 $route['gallery'] = 'user_controller/view_gallery';
 $route['tambah_foto'] = 'user_controller/upload_foto';
@@ -71,7 +72,7 @@ $route['update_penilaian'] = 'user_controller/update_penilaian';
 
 //admin
 $route['admin'] = 'event_controller/list_event_today';
-$route['list_departemen_admin'] = 'departemen_controller/show_departemen';
+$route['list_departemen_admin'] = 'departemen_controller/index';
 $route['tambah_departemen_admin'] = 'departemen_controller/input';
 $route['tambah_kepengurusan_admin'] = 'kepengurusan_controller/input';
 $route['list_kepengurusan_admin'] = 'kepengurusan_controller/show_kepengurusan';
