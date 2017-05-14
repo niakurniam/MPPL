@@ -83,11 +83,7 @@
                                         <li> <a href="list_kepengurusan_admin">
                                             Lihat Kepengurusan
                                         </a> </li>
-<<<<<<< HEAD
                                         <li> <a href="<?php echo base_url(); ?>tambah_kepengurusan_admin">
-=======
-                                        <li> <a href="tambah_kepengurusan_admin">
->>>>>>> a76b02b092b8e808930361183d8075f2201e0fb1
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
@@ -98,11 +94,7 @@
                                         <li> <a href="<?php echo base_url(); ?>list_departemen_admin">
                                             Lihat Departemen
                                         </a> </li>
-<<<<<<< HEAD
                                         <li> <a href="<?php echo base_url(); ?>tambah_departemen_admin">
-=======
-                                        <li> <a href="tambah_departemen_admin">
->>>>>>> a76b02b092b8e808930361183d8075f2201e0fb1
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>

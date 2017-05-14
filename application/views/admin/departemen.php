@@ -220,7 +220,7 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
-                                <form class="form-inline" method="post" action="">
+                                <form class="form-inline">
                                  <div class="form-group"> 
                                     <select class="form-control">
                                      <option selected>Pilih Kepengurusan</option>
