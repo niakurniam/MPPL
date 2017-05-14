@@ -220,6 +220,7 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
+<<<<<<< HEAD
                                 <?php echo form_open('departemen_controller/tambah_departemen'); ?>
                                  <div class="form-group"> 
                                     <select class="form-control">
@@ -230,12 +231,25 @@
                                     }
 
                                     ?>
+=======
+                                <?php
+                                  $attributes = array('class' => 'form-inline');
+                                  echo form_open(base_url()."get_departemen", $attributes);
+                                ?>
+                                 <div class="form-group">
+                                    <select class="form-control" name="id_kepengurusan">
+                                     <option value= '0'>Pilih Kepengurusan</option>
+                                     <?php foreach ($listkepengurusan as $row) {
+                                            echo "
+                                              <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
+                                            }
+                                      ?>
+>>>>>>> 8914fe8fe970806c6314e583ee650455d95a3bb0
                                 </select>
                                 <?php
                                 $submit = array ("name"=>"nama_kepengurusan","type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
                                 echo form_submit($submit);
                                 ?>
-                                <!--<button type="submit" class="btn btn-primary">Cari</button> -->
                             </div>
                         </form>
                         <br>
@@ -243,7 +257,6 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 1%">No</th>
                                         <th style="width: 20%">Departemen</th>
                                         <th style="width: 10%">Edit</th>
                                         <th style="width: 10%">Hapus</th>

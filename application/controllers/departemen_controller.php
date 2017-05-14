@@ -10,35 +10,12 @@ class departemen_controller extends CI_Controller {
 		$this->load->view('user/tambah_event',$data);
 	}
 
-	/*public function index()
-	{
-		$get_kepengurusan = $this->Kepengurusan->get_kepengurusan();
-		$this->load->view('admin/departemen', ['get_kepengurusan'=>'get_kepengurusan']);
-	}
-
-	public function getDepartemen()
-	{
-		$kepengurusan = $this->input->post('id_kepengurusan');
-		$get_kepengurusan = $this->Kepengurusan->get_kepengurusan();
-		$listdepartemen = $this->Departemen->get_list($kepengurusan);
-		$this->load->view('get_departemen', ['get_kepengurusan'=>$get_kepengurusan,
-		'listdepartemen'=>$listdepartemen]);
-	}*/
-
 	public function input2()
 	{
 		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
 		$data['listdepartemen'] = $this->Departemen->list_departemen();
 		$this->load->view('admin/departemen' , $data);
 	}
-
-	/*public function get_tahun() {
-		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
-		$tahun = $this->input->post('id_kepengurusan');
-
-		$data['listdepartemen'] = $this->Departemen->list_departemen();
-		redirect(base_url('list_departemen_admin'));
-	}*/
 
 	public function input()
 	{
@@ -68,5 +45,19 @@ class departemen_controller extends CI_Controller {
 		$tahun = $this->input->post('id_kepengurusan');
 		$data['listdepartemen'] = $this->Departemen->get_id($tahun);
 		$this->load->view('user/get_departemen' , $data);
+	}
+
+	public function index2(){
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$data['listdepartemen'] = $this->Departemen->list_departemen();
+		$this->load->view('admin/departemen' , $data);
+	}
+
+	public function get_tahun_admin()
+	{
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$tahun = $this->input->post('id_kepengurusan');
+		$data['listdepartemen'] = $this->Departemen->get_id($tahun);
+		$this->load->view('admin/get_departemen' , $data);
 	}
 }
