@@ -225,15 +225,28 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                         <th style="width: 20%">Departemen</th>
+                                                        <th style="width: 10%">Edit</th>
+                                                        <th style="width: 10%">Hapus</th>
                                                     </tr>
                                                 </thead>
+
                                                 <tbody>
                                                   <?php if(count($listdepartemen) > 0){
-                                                    foreach ($listdepartemen as $row) {
-                                                      echo "
-                                                      <tr>
-                                                          <td>$row->nama_departemen</td>
-                                                      </tr>";}
+                                                      foreach ($listdepartemen as $row) {
+
+                                                        echo "
+                                                        <tr>
+                                                            
+                                                            <td>$row->nama_departemen</td>
+                                                            <td>".anchor('departemen_controller/edit_departemen/'.$row->id_departemen,'<center><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></center>')."  </td>
+                                                            <td>".anchor('departemen_controller/delete_departemen/'.$row->id_departemen,'<center><button type="button" class="btn btn-danger">
+                                                                <i class="fa fa-trash-o"></i></center>')."  </td>
+                                                        </tr>
+
+                                                        ";
+                                                       
+                                                    }
+
                                                   }
                                                   else{
                                                     echo "
