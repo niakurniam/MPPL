@@ -67,11 +67,11 @@
                         <ul class="nav-profile">
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('assets/user.png')"> </div> <span class="name">
-    			      User
-    			    </span> </a>
+                                    <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
+                                    Admin
+                                </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -82,52 +82,76 @@
                         <div class="sidebar-header">
                             <div class="brand">
                                 <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> SI HMTCalendar </div>
+                            </div>
+                            <nav class="menu">
+                                <ul class="nav metismenu" id="sidebar-menu">
+                                    <li>
+                                        <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
+                                    </li>
+                                    <li>
+                                        <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
+                                        <ul>
+                                            <li> <a href="list_kepengurusan_admin">
+                                                Lihat Kepengurusan
+                                            </a> </li>
+                                            <li> <a href="tambah_kepengurusan_admin">
+                                                Tambah Kepengurusan
+                                            </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="active">
+                                        <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                                        <ul>
+                                            <li class="active"> <a href="list_departemen_admin">
+                                                Lihat Departemen
+                                            </a> </li>
+                                            <li> <a href="tambah_departemen_admin">
+                                                Tambah Departemen
+                                            </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                        <ul>
+                                            <li> <a href="list_anggota_admin">
+                                                Lihat Anggota
+                                            </a> </li>
+                                            <li> <a href="tambah_anggota_admin">
+                                                Tambah Anggota
+                                            </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                        <ul>
+                                            <li> <a href="<?php echo base_url(); ?>gallery">
+                                                Lihat Foto
+                                            </a> </li>
+                                            <li> <a href="static-tables.html">
+                                                Tambah Foto
+                                            </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
+                                        <ul>
+                                            <li> <a href="">
+                                                Lihat Event
+                                            </a> </li>
+                                            <li> <a href="">
+                                                Tambah Event
+                                            </a> </li>
+                                            <li> <a href="cards.html">
+                                                Penilaian Event
+                                            </a> </li>
+                                            <li> <a href="typography.html">
+                                                Tambah Penilaian
+                                            </a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                       <nav class="menu">
-                            <ul class="nav metismenu" id="sidebar-menu">
-                                <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
-                                </li>
-                                <li class="active">
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
-                                </li>
-                                <li>
-                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li> <a href="<?php echo base_url('gallery'); ?>">
-                                    Lihat Foto
-                                </a> </li>
-                                        <li> <a href="<?php echo base_url('tambah_foto') ?>">
-                                    Tambah Foto
-                                </a> </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
-                                            Lihat Event
-                                        </a> </li>
-                                        <li> <a href="">
-                                            Tambah Event
-                                        </a> </li>
-                                        <li> <a href="cards.html">
-                                            Penilaian Event
-                                        </a> </li>
-                                        <li> <a href="typography.html">
-                                            Tambah Penilaian
-                                        </a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                     <footer class="sidebar-footer">
                         <ul class="nav metismenu" id="customize-menu">
                             <li>
@@ -204,7 +228,8 @@
 		                            </div>
                                 <?php
                                   $attributes = array('class' => 'form-inline');
-                                  echo form_open(base_url()."show_departemen", $attributes); ?>
+                                  echo form_open(base_url()."get_departemen", $attributes);
+                                ?>
                             			<div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
 											                <option selected value='0'>Pilih Tahun Kepengurusan</option>
@@ -226,6 +251,8 @@
                                                 <thead>
                                                     <tr>
                                                       <th style="width: 20%">Departemen</th>
+                                                      <th style="width: 10%">Edit</th>
+                                                      <th style="width: 10%">Hapus</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

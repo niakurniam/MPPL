@@ -220,20 +220,10 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
-<<<<<<< HEAD
-                                <form class="form-inline">
-                                 <div class="form-group"> 
-                                    <select class="form-control">
-                                     <option selected>Pilih Kepengurusan</option>
-                                     <?php 
-                                     foreach ($ddkepengurusan as $row) {
-                                        echo '<option>'.$row->nama_kepengurusan.'</option>';
-                                    }
-=======
-                                <!--<form class="form-inline">-->
                                 <?php
                                   $attributes = array('class' => 'form-inline');
-                                  echo form_open('departemen_controller/get_tahun', $attributes); ?>
+                                  echo form_open(base_url()."get_departemen", $attributes);
+                                ?>
                                  <div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
                                      <option value= '0'>Pilih Kepengurusan</option>
@@ -241,15 +231,12 @@
                                             echo "
                                               <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
                                             }
->>>>>>> 3cc05a2a4a2a50f714bd4715ad89e391571d863a
-
                                       ?>
                                 </select>
                                 <?php
                                   $submit = array ("type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
                                   echo form_submit($submit);
                                 ?>
-                                <!--<button type="submit" class="btn btn-primary">Cari</button> -->
                             </div>
                         <?php echo form_close(''); ?>
                         <br>
@@ -257,7 +244,6 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 1%">No</th>
                                         <th style="width: 20%">Departemen</th>
                                         <th style="width: 10%">Edit</th>
                                         <th style="width: 10%">Hapus</th>
