@@ -17,15 +17,6 @@ class Kepengurusan extends CI_Model{
 		return $ddkepengurusan->result();
 	}
 
-	/*public function get_kepengurusan()
-	{
-		$query = $this->db->get('kepengurusan');
-		if($query->num_rows() > 0)
-		{
-			return $query->result();
-		}
-	}*/
-
 	public  function list_kepengurusan(){
 		$list = $this->db->query("select * from kepengurusan order by tahun_mulai asc");
 		return $list->result();
@@ -33,13 +24,6 @@ class Kepengurusan extends CI_Model{
 
 	public function get_id($id_kepengurusan ){
 		return $this->db->get_where('kepengurusan',array('id_kepengurusan' => $id_kepengurusan));
-	}
-
-	function hapus_kepengurusan($id)
-	{
-		$id = $_GET['id'];
-		$this->db->where('id_kepengurusan', $id);
-		$this->db->delete('kepengurusan');
 	}
 
 }

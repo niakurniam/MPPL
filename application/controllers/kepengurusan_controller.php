@@ -54,14 +54,33 @@ class kepengurusan_controller extends CI_Controller {
 		redirect(base_url('list_kepengurusan_admin'));
 	}
 
-	public function hapus_kepengurusan_id()
+	public function index()
 	{
-		if(isset($_GET['id']))
-		{
-			$id = $_GET['id'];
-			$this->Kepengurusan->hapus_kepengurusan($id);
-			redirect('admin/kepengurusan');
-		}
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$this->load->view('admin/kepengurusan', $data);
 	}
 
+	public function edit_kepengurusan(){
+		$id_kepengurusan =$this->uri->segment(3);
+		$data['tangkap'] = $this->Kepengurusan->get_id($id_kepengurusan )->row_array();
+		$this->load->view('admin/edit_kepengurusan', $data);
+	}
+
+	public function save_edit_kepengurusan()
+	{
+		$id = $this->input->post('id_kepengurusan');
+		$kepengurusan = array('nama_kepengurusan' => $this->input->post('nama_kepengurusan'),
+													 'tahun_mulai' => $this->input->post('tahun_mulai'),
+												   'tahun_berakhir' => $this->input->post('tahun_berakhir'));
+		$this->db->where('id_kepengurusan', $id);
+		$this->db->update('kepengurusan', $kepengurusan);
+		redirect(base_url('list_kepengurusan_admin'));
+	}
+
+	public function delete_kepengurusan(){
+		$id = $this->uri->segment(3);
+		$this->db->where('id_kepengurusan', $id);
+		$this->db->delete('kepengurusan');
+		redirect(base_url('list_kepengurusan_admin'));
+	}
 }

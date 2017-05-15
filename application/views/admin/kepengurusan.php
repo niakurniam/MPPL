@@ -229,7 +229,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php 
+                                                    <?php
                                                         foreach ($listkepengurusan as $row)
                                                          {
                                                             echo "
@@ -237,8 +237,10 @@
                                                                     <td>$row->nama_kepengurusan</td>
                                                                     <td>$row->tahun_mulai</td>
                                                                     <td>$row->tahun_berakhir</td>
-                                                                    <td><button a href='' type='button' class='btn btn-info'>Edit</button></td>
-                                                                    <td><button a href='' type='button' class='btn btn-danger'>Hapus</button></td>
+                                                                    <td>".anchor('kepengurusan_controller/edit_kepengurusan/'.$row->id_kepengurusan,
+                                                                    '<center><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button></center>')." </td>
+                                                                    <td>".anchor('kepengurusan_controller/delete_kepengurusan/'.$row->id_kepengurusan,
+                                                                    '<center><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></center>')." </td>
                                                                 </tr>
                                                             ";
                                                         }
@@ -250,7 +252,7 @@
                     		</div>
                     	</div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2017 at 11:13 AM
+-- Generation Time: May 15, 2017 at 07:53 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -53,22 +53,43 @@ CREATE TABLE IF NOT EXISTS `departemen` (
 `id_departemen` int(11) NOT NULL,
   `id_kepengurusan` int(11) DEFAULT NULL,
   `nama_departemen` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `departemen`
 --
 
 INSERT INTO `departemen` (`id_departemen`, `id_kepengurusan`, `nama_departemen`) VALUES
-(1, 1, 'Ketua Himpunan'),
-(2, 1, 'Wakil Ketua Himpunan'),
-(3, 1, 'Bendahara'),
-(4, 1, 'Sekertaris'),
-(5, 2, 'Ketua Himpunan'),
-(6, 2, 'Wakil Ketua Himpunan'),
-(7, 2, 'Sekertaris'),
-(8, 2, 'Bendahara'),
-(10, 2, 'KDPM');
+(1, 1, 'Kaderisasi'),
+(2, 1, 'Hubungan Luar'),
+(3, 1, 'Dalam Negeri'),
+(4, 1, 'Keprofesian'),
+(5, 1, 'Media Informasi'),
+(6, 1, 'Kewirausahaan'),
+(7, 1, 'Kesejahteraan Mahasiswa'),
+(8, 1, 'Minat Bakat'),
+(9, 2, 'Kaderisasi'),
+(10, 2, 'Hubungan Luar'),
+(11, 2, 'Dalam negeri'),
+(12, 2, 'Keprofesian'),
+(13, 2, 'Media Informasi'),
+(14, 2, 'Kewirausahaan'),
+(15, 2, 'Keseahteraan Mahasiswa'),
+(16, 2, 'Minat Bakat'),
+(17, 3, 'Kaderisasi'),
+(18, 3, 'Hubungan Luar'),
+(19, 3, 'Dalam Negeri'),
+(20, 3, 'Keprofesian'),
+(21, 3, 'Media Informasi'),
+(22, 3, 'Kesejahteraan Mahasiswa'),
+(23, 3, 'Minat Bakat'),
+(24, 4, 'Kaderisasi'),
+(25, 4, 'Hubungan Luar'),
+(26, 4, 'Dalam Negeri'),
+(27, 4, 'Keprofesian'),
+(28, 4, 'Media Informasi'),
+(29, 4, 'Minat Bakat'),
+(30, 4, 'Kesejahteraan Mahasiswa');
 
 -- --------------------------------------------------------
 
@@ -97,15 +118,7 @@ CREATE TABLE IF NOT EXISTS `kegiatan` (
   `tanggal_selesai` date DEFAULT NULL,
   `jam_selesai` time NOT NULL,
   `tempat` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kegiatan`
---
-
-INSERT INTO `kegiatan` (`id_event`, `id_departemen`, `nama_event`, `tanggal_mulai`, `jam_mulai`, `tanggal_selesai`, `jam_selesai`, `tempat`) VALUES
-(1, 10, 'OK2BK', '2017-05-02', '10:24:52', '2017-05-02', '10:24:52', 'Jurusan Teknik Informatika ITS'),
-(2, 10, 'Booting Up File', '2017-05-03', '06:00:00', '2017-05-03', '17:00:00', 'Jurusan Teknik Informatika ITS');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -125,8 +138,8 @@ CREATE TABLE IF NOT EXISTS `kepengurusan` (
 --
 
 INSERT INTO `kepengurusan` (`id_kepengurusan`, `nama_kepengurusan`, `tahun_mulai`, `tahun_berakhir`) VALUES
-(1, 'OPTIMASI', '2015', '2016'),
-(2, 'INSPIRASI', '2016', '2017'),
+(1, 'INSPIRASI', '2016', '2017'),
+(2, 'OPTIMASI', '2015', '2016'),
 (3, 'BERKARYA', '2014', '2015'),
 (4, 'BERSAHABAT', '2013', '2014');
 
@@ -236,7 +249,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
-MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id_departemen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `foto`
 --
@@ -246,7 +259,7 @@ MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kepengurusan`
 --

@@ -11,25 +11,6 @@ class Departemen extends CI_Model{
 		return $listdept->result();
 	}
 
-	/*public function get_departemen()
-	{
-		$query = $this->db->get('departemen');
-		if($query->num_rows() > 0)
-		{
-			return $query->result();
-		}
-	}
-
-	public function get_list($kepengurusan)
-	{
-		$this->db->select('departemen.id_departemen', 'departemen.nama_departemen');
-		$this->db->from('departemen');
-		$this->db->join('kepengurusan', 'kepengurusan.id_kepengurusan = departemen.id_kepengurusan');
-		$this->db->where(['kepengurusan.id_kepengurusan'=>$kepengurusan]);
-		$query = $this->db->get();
-		return $query->result();
-	}*/
-
 	public function list_departemen(){
 		$list = $this->db->query("select * from departemen");
 		return $list->result();
