@@ -1,4 +1,4 @@
-<?php
+ <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -72,8 +72,7 @@ $route['update_penilaian'] = 'user_controller/update_penilaian';
 
 //admin
 $route['admin'] = 'event_controller/list_event_today';
-$route['list_departemen_admin'] = 'departemen_controller/index2';
-$route['get_departemen'] = 'departemen_controller/get_tahun_admin';
+$route['list_departemen_admin'] = 'departemen_controller/index';
 $route['tambah_departemen_admin'] = 'departemen_controller/input';
 $route['tambah_kepengurusan_admin'] = 'kepengurusan_controller/input';
 $route['list_kepengurusan_admin'] = 'kepengurusan_controller/show_kepengurusan';
