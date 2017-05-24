@@ -9,21 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 15px;
@@ -80,15 +68,15 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('admin'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
-                                <li  class="">
+                                <li class="active">
                                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li  class="active"> <a href="<?php echo base_url('list_kepengurusan_admin'); ?>">
+                                        <li class="active"> <a href="<?php echo base_url('kepengurusan_controller/index'); ?>">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="tambah_kepengurusan_admin">
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/input'); ?>">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
@@ -96,16 +84,16 @@
                                 <li>
                                     <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="list_departemen_admin">
-                                            Lihat Departemen
-                                        </a> </li>
-                                        <li> <a href="tambah_departemen_admin">
-                                            Tambah Departemen
-                                        </a> </li>
+                                      <li> <a href="<?php echo base_url('departemen_controller/daftar_departemen'); ?>">
+                                          Lihat Departemen
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
+                                          Tambah Departemen
+                                      </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <a href="<?php echo base_url(); ?>"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="list_anggota_admin">
                                             Lihat Anggota
@@ -119,17 +107,17 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url(); ?>gallery">
-                                    Lihat Foto
-                                </a> </li>
+                          								Lihat Foto
+                          							</a> </li>
                                         <li> <a href="static-tables.html">
-                                    Tambah Foto
-                                </a> </li>
-                                    </ul>
-                                </li>
+                                          Tambah Foto
+                                        </a> </li>
+    								               </ul>
+                               </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="lihat_event_admin">
+                                       <li> <a href="<?php echo base_url(); ?>lihat_event_admin">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="tambah_event_admin">
@@ -140,7 +128,7 @@
                                         </a> </li>
                                         <li> <a href="form_penilaian_admin">
                                             Tambah Penilaian
-                                        </a> </li>
+            							              </a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -235,16 +223,13 @@
                                                             echo "
                                                                 <tr>
                                                                     <td>$row->nama_kepengurusan</td>
-                                                                    <td>$row->tahun_mulai</td>
-                                                                    <td>$row->tahun_berakhir</td>
-                                                                    <td>".anchor('kepengurusan_controller/edit_kepengurusan/'.$row->id_kepengurusan,
-                                                                    '<center><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button></center>')." </td>
-                                                                    <td>".anchor('kepengurusan_controller/delete_kepengurusan/'.$row->id_kepengurusan,
-                                                                    '<center><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></center>')." </td>
+                                                                    <td style='text-align: center'>$row->tahun_mulai</td>
+                                                                    <td style='text-align: center'>$row->tahun_berakhir</td>
+                                                                    <td>".anchor('kepengurusan_controller/edit_kepengurusan/'.$row->id_kepengurusan,'<center><i class="fa fa-pencil"></i></center>')."  </td>
+                                                                    <td>".anchor('kepengurusan_controller/delete_kepengurusan/'.$row->id_kepengurusan,'<center><i class="fa fa-trash-o"></i></center>')."  </td>
                                                                 </tr>
                                                             ";
-                                                        }
-                                                    ?>
+                                                        }?>
                                                 </tbody>
                                             </table>
                                         </section>

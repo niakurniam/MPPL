@@ -9,21 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -145,67 +133,6 @@
                             </ul>
                         </nav>
                     </div>
-                    <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
@@ -219,26 +146,41 @@
                                     <div class="title-block">
                                         <h3 class="title"> Edit Departemen </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Nama Departemen</label> <input type="text" class="form-control boxed"> </div>
+                                    <?php
+                                      echo form_open('departemen_controller/save_edit_departemen');
+                                    ?>
+                                        <div class="form-group"> <label class="control-label">Kepengurusan</label>
+                                          <?php echo form_hidden('id_departemen', $this->uri->segment(3));?>
+                                      <select name="id_tahun" class="form-control">
+                                          <?php
+                                              foreach ($tahun as $i){
+                                                  echo "
+                                                  <option value= $i->id_kepengurusan> $i->tahun_mulai - $i->tahun_berakhir </option>
+                                                  ";
+                                              }
+                                              foreach ($listkepengurusan as $row) {
+                                                  echo "
+                                                  <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>
+                                                  ";
+                                              }
+                                          ?>
+                                        </select>
+                                      </div>
+                                          <div class="form-group"> <label class="control-label">Nama Departemen</label>
+                                            <?php echo form_input ('nama_departemen',$tangkap['nama_departemen'], array('placeholder'=> 'nama departemen', 'class'=> 'form-control boxed', 'type'=>'text'))?>
+                                          </div>
+                                        </div>
                             <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Edit
-                </button> </div>
+                                <div class="col-sm-10 col-sm-offset-2">
+                                  <?php echo form_submit('submit', 'Edit', array('class'=> 'btn btn-primary')); ?>
+                                </div>
                             </div>
-                            
-                                    </form>
+                                    <?php echo form_close();?>
                                 </div>
                             </div>
                         </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

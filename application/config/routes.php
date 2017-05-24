@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //route baru
 $route['logout'] = 'login_controller/logout';
+<<<<<<< HEAD
 //user
 $route['user'] = 'event_controller/list_event_today2';
 $route['list_kepengurusan'] = 'kepengurusan_controller/show_kepengurusan2';
@@ -86,3 +87,5 @@ $route['tambah_foto_admin'] = 'admin_controller/upload_foto';
 $route['penilaian_event_admin'] = 'admin_controller/show_penilaian';
 $route['form_penilaian_admin'] = 'admin_controller/tambah_penilaian';
 $route['update_penilaian_admin'] = 'admin_controller/update_penilaian';
+=======
+>>>>>>> d158451c7896e4ac1893782feca8cefa6380f2a2

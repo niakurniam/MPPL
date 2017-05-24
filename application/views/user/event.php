@@ -10,20 +10,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-seagreen.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -85,43 +73,43 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/index'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li>
-                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>gallery">
-                                    Lihat Foto
-                                </a> </li>
-                                        <li> <a href="static-tables.html">
-                                    Tambah Foto
-                                </a> </li>
+                                        <li> <a href="<?php echo base_url('gallery'); ?>">
+                                          Lihat Foto
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url('tambah_foto') ?>">
+                                          Tambah Foto
+                                        </a> </li>
                                     </ul>
                                 </li>
                                 <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li class="active"> <a href="<?php echo base_url('lihat_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-            								Tambah Event
-            							</a> </li>
+                                        <li> <a href="<?php echo base_url('tambah_event'); ?>">
+                                          Tambah Event
+                                        </a> </li>
                                         <li> <a href="cards.html">
-            								Penilaian Event
-            							</a> </li>
+                                          Penilaian Event
+                                        </a> </li>
                                         <li> <a href="typography.html">
-            								Tambah Penilaian
-            							</a> </li>
+                                          Tambah Penilaian
+                                        </a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -208,17 +196,17 @@
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> 
+                                        </select>
                                 </div>
                                 <div class="form-group"> <label for="nama_departemen">Departemen</label> <select class="form-control">
                                             <option>Option one</option>
                                             <option>Option two</option>
                                             <option>Option three</option>
                                             <option>Option four</option>
-                                        </select> 
+                                        </select>
                                 </div>
                                 &nbsp
-                                <button type="submit" class="btn btn-primary">Cari</button> 
+                                <button type="submit" class="btn btn-primary">Cari</button>
                             </form>
                             </div>
                         </div>
@@ -269,9 +257,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>        
+                        </div>
                 </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

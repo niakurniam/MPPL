@@ -9,21 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch- icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <style type="text/css">
             #table-right{
@@ -102,10 +90,10 @@
                                     <li class="active">
                                         <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                         <ul>
-                                            <li class="active"> <a href="list_departemen_admin">
+                                            <li> <a href="<?php echo base_url('departemen_controller/index'); ?>">
                                                 Lihat Departemen
                                             </a> </li>
-                                            <li> <a href="tambah_departemen_admin">
+                                            <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
                                                 Tambah Departemen
                                             </a> </li>
                                         </ul>
@@ -152,67 +140,6 @@
                                 </ul>
                             </nav>
                         </div>
-                    <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
@@ -228,11 +155,11 @@
 		                            </div>
                                 <?php
                                   $attributes = array('class' => 'form-inline');
-                                  echo form_open(base_url()."get_departemen", $attributes);
+                                  echo form_open(base_url()."departemen_controller/get_tahun_admin", $attributes);
                                 ?>
                             			<div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
-											                <option selected value='0'>Pilih Tahun Kepengurusan</option>
+											                <option value='0'>Pilih Tahun Kepengurusan</option>
                                         <?php
                                         foreach ($listkepengurusan as $row) {
                                           echo "<option value=$row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>";
@@ -258,10 +185,14 @@
                                                 <tbody>
                                                   <?php if(count($listdepartemen) > 0){
                                                     foreach ($listdepartemen as $row) {
-                                                      echo "
-                                                      <tr>
-                                                          <td>$row->nama_departemen</td>
-                                                      </tr>";}
+                                                        echo "
+                                                        <tr>
+                                                            <td>$row->nama_departemen</td>
+                                                            <td>".anchor('departemen_controller/edit_departemen/'.$row->id_departemen,'<center><i class="fa fa-pencil"></i></center>')."  </td>
+                                                            <td>".anchor('departemen_controller/delete_departemen/'.$row->id_departemen,'<center><i class="fa fa-trash-o"></i></center>')."  </td>
+                                                        </tr>
+                                                        ";
+                                                    }
                                                   }
                                                   else{
                                                     echo "

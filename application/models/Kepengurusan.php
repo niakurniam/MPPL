@@ -22,8 +22,28 @@ class Kepengurusan extends CI_Model{
 		return $list->result();
 	}
 
-	public function get_id($id_kepengurusan ){
+	public function get_id($id_kepengurusan){
 		return $this->db->get_where('kepengurusan',array('id_kepengurusan' => $id_kepengurusan));
 	}
 
+	function update_data($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+
+	function delete_data($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	public function get_kepengurusan(){
+		$result = $this->db->get('kepengurusan');
+		if($result->num_rows() > 0)
+		{
+			return $result->result_array();
+		}
+		else{
+			return array();
+		}
+	}
 }

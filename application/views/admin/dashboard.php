@@ -10,20 +10,9 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url(); ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url(); ?>css/app.css">');
-            }
-        </script>
+
         <style type="text/css">
             #table-right{
                 margin-left: 50px;
@@ -60,7 +49,7 @@
     			      Admin
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="<?php echo base_url('index.php/login_controller/logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="<?php echo base_url('login_controller/logout') ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>
@@ -75,15 +64,15 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li class="active">
-                                    <a href="<?php echo base_url('admin'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
                                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="list_kepengurusan_admin">
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/index'); ?>">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="<?php echo base_url(); ?>tambah_kepengurusan_admin">
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/input'); ?>">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
@@ -91,32 +80,38 @@
                                 <li>
                                     <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>list_departemen_admin">
+                                        <li> <a href="<?php echo base_url('departemen_controller/index'); ?>">
                                             Lihat Departemen
                                         </a> </li>
-                                        <li> <a href="<?php echo base_url(); ?>tambah_departemen_admin">
+                                        <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="list_anggota_admin">
-                                            Lihat Anggota
-                                        </a> </li>
-                                        <li> <a href="tambah_anggota_admin">
-                                            Tambah Anggota
-                                        </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller">
+                                        Lihat Pengurus
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/tambah_pengurus">
+                                        Tambah Pengurus
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/kelola_anggota">
+                                        Lihat Anggota
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/tambah_anggota">
+                                        Tambah Anggota
+                                      </a> </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>gallery">
+                                        <li> <a href="<?php echo base_url(); ?>gallery_controller/index">
                           								Lihat Foto
                           							</a> </li>
-                                        <li> <a href="static-tables.html">
+                                        <li> <a href="<?php echo base_url(); ?>gallery_controller/unggah_foto">
                                           Tambah Foto
                                         </a> </li>
     								               </ul>
@@ -124,10 +119,10 @@
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                       <li> <a href="lihat_event_admin">
+                                       <li> <a href="<?php echo base_url(); ?>event_controller/index">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="tambah_event_admin">
+                                        <li> <a href="<?php echo base_url(); ?>event_controller/tambah_event">
                                             Tambah Event
                                         </a> </li>
                                         <li> <a href="penilaian_event_admin">

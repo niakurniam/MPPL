@@ -9,21 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="styesheet" href="<?php echo base_url();?>css/app-seagreen.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -80,13 +68,13 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/index'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
@@ -95,12 +83,12 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url('gallery'); ?>">
-                                    Lihat Foto
-                                </a> </li>
+                          								Lihat Foto
+                          							</a> </li>
                                         <li> <a href="<?php echo base_url('tambah_foto') ?>">
-                                    Tambah Foto
-                                </a> </li>
-                                    </ul>
+                                          Tambah Foto
+                                        </a> </li>
+    								                </ul>
                                 </li>
                                 <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
@@ -108,15 +96,15 @@
                                         <li> <a href="<?php echo base_url('lihat_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li class="active"> <a href="">
-                                            Tambah Event
-                                        </a> </li>
-                                        <li> <a href="cards.html">
-                                            Penilaian Event
-                                        </a> </li>
-                                        <li> <a href="typography.html">
-                                            Tambah Penilaian
-                                        </a> </li>
+                                        <li class="active"> <a href="<?php echo base_url('tambah_event'); ?>">
+                          								Tambah Event
+                          							</a> </li>
+                                                      <li> <a href="cards.html">
+                          								Penilaian Event
+                          							</a> </li>
+                                                      <li> <a href="typography.html">
+                          								Tambah Penilaian
+                          							</a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -196,35 +184,44 @@
                                     <div class="title-block">
                                         <h3 class="title"> Tambah Event </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option selected>Pilih Tahun Kepengurusan</option>
-                                                <?php 
-                                                    foreach ($listtahun as $row) {
-                                                        echo '<option>'.$row->tahun_mulai.' - '.$row->tahun_berakhir.'</option>';
-                                                    }
-                                                ?>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
-                                            <option selected>Pilih Departemen</option>
-                                                <?php 
-                                                    foreach ($listdept as $row) {
-                                                        echo '<option>'.$row->nama_departemen.'</option>';
-                                                    }
-                                                ?>
-                                        </select> </div>
+                                  <!--  <form role="form" class="form-horizontal" method="POST" role="form" class="form-horizontal"
+                                    action="">-->
+                                    <?php echo form_open('kepengurusan_controller/save_edit_kepengurusan') ?>
+                                      <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control" name="id_kepengurusan" id="id_kepengurusan">
+                                          <option value="">--Pilih Kepengurusan</option>
+                                          <?php
+                                            foreach ($kepengurusan as $row) {
+                                              echo "<option value='$row[id_departemen]'>$row[nama_kepengurusan]</option>"
+                                            }
+                                           ?>
+                                      </select> </div>
+                                      <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control" name="id_departemen" id="id_departemen">
+                                          <option value="">--Pilih Kepengurusan</option>
+                                      </select> </div>
                                         <div class="form-inline">
                                               <label>Tanggal</label><br>
-                                              <input type="date" size="4" class="form-control" /> - <input type="date" size="4" class="form-control" />
+                                              <?php
+                                        			$setting_tanggal_mulai=array('type'=>'date','name'=>'tanggal_mulai','class'=>'form-control','size'=>'4');
+                                        			echo form_input($setting_tanggal_mulai);
+                                        			?> - <?php $setting_tanggal_selesai=array('type'=>'date','name'=>'tanggal_selesai','class'=>'form-control','size'=>'4');
+                                        			echo form_input($setting_tanggal_selesai); ?>
                                         </div>
                                         <br>
                                         <div class="form-inline">
                                               <label>Waktu</label><br>
-                                              <input type="time" size="4" class="form-control" /> - <input type="time" size="4" class="form-control" />
+                                              <?php
+                                        			$setting_waktu_mulai=array('type'=>'time','name'=>'waktu_mulai','class'=>'form-control','size'=>'4');
+                                        			echo form_input($setting_waktu_mulai);
+                                        			?> - <?php $setting_waktu_selesai=array('type'=>'time','name'=>'waktu_selesai','class'=>'form-control','size'=>'4');
+                                        			echo form_input($setting_waktu_selesai); ?>
                                         </div>
                                         <br>
-                                        <div class="form-group"> <label class="control-label">Tempat</label> <input type="text" class="form-control boxed"> </div>
-                            <div class="form-group row">
+                                        <div class="form-group"> <label class="control-label">Tempat</label>
+                                          <?php
+                                    			$setting_alamat_lengkap=array('type'=>'text','name'=>'tempat','class'=>'form-control boxed','placeholder'=>'Tempat Kegiatan');
+                                    			echo form_input($setting_alamat_lengkap);
+                                    			?> </div>
+                                      <div class="form-group row">
                                 <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
                     Tambah
                 </button> </div>
@@ -234,7 +231,7 @@
                             </div>
                         </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">
@@ -335,6 +332,20 @@
 		  var dt = new Date();
 		  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 		</script> <!-- Show Current Date -->
+    <script src="<?php echo base_url('js/jquery-2.1.1.js');?>">
+      function tampilDepartemen()
+      {
+         kdkep = document.getElementById("id_kepengurusan").value;
+         $.ajax({
+           url:"<?php echo base_url();?>pilih_departemen/"+kdkep+"",
+           success: function(response){
+           $("#id_departemen").html(response);
+           },
+           dataType:"html"
+         });
+         return false;
+      }
+    </script>
 
     </body>
 

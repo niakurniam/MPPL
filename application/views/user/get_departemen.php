@@ -10,20 +10,8 @@
         <link rel="apple-touch- icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>css/app-seagreen.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <style type="text/css">
             #table-right{
@@ -83,16 +71,16 @@
                             <div class="brand">
                                 <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> SI HMTCalendar </div>
                         </div>
-                       <nav class="menu">
+                        <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li class="active">
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/index'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
@@ -101,11 +89,11 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url('gallery'); ?>">
-                                    Lihat Foto
-                                </a> </li>
+                                          Lihat Foto
+                                        </a> </li>
                                         <li> <a href="<?php echo base_url('tambah_foto') ?>">
-                                    Tambah Foto
-                                </a> </li>
+                                          Tambah Foto
+                                        </a> </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -114,14 +102,14 @@
                                         <li> <a href="<?php echo base_url('lihat_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-                                            Tambah Event
+                                        <li> <a href="<?php echo base_url('tambah_event'); ?>">
+                                          Tambah Event
                                         </a> </li>
                                         <li> <a href="cards.html">
-                                            Penilaian Event
+                                          Penilaian Event
                                         </a> </li>
                                         <li> <a href="typography.html">
-                                            Tambah Penilaian
+                                          Tambah Penilaian
                                         </a> </li>
                                     </ul>
                                 </li>
@@ -204,7 +192,7 @@
 		                            </div>
                                 <?php
                                   $attributes = array('class' => 'form-inline');
-                                  echo form_open(base_url()."show_departemen", $attributes); ?>
+                                  echo form_open(base_url()."departemen_controller/get_tahun", $attributes); ?>
                             			<div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
 											                <option selected value='0'>Pilih Tahun Kepengurusan</option>
@@ -224,34 +212,19 @@
                                     <section class="example">
                                             <table class="table table-bordered">
                                                 <thead>
-<<<<<<< HEAD
-                                                        <th style="width: 20%">Departemen</th>
-                                                        <th style="width: 10%">Edit</th>
-                                                        <th style="width: 10%">Hapus</th>
-=======
                                                     <tr>
                                                       <th style="width: 20%">Departemen</th>
->>>>>>> 8914fe8fe970806c6314e583ee650455d95a3bb0
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
                                                   <?php if(count($listdepartemen) > 0){
                                                       foreach ($listdepartemen as $row) {
-
-                                                        echo "
-                                                        <tr>
-                                                            
+                                                        echo
+                                                        "<tr>
                                                             <td>$row->nama_departemen</td>
-                                                            <td>".anchor('departemen_controller/edit_departemen/'.$row->id_departemen,'<center><button type="button" class="btn btn-info"><i class="fa fa-pencil"></i></center>')."  </td>
-                                                            <td>".anchor('departemen_controller/delete_departemen/'.$row->id_departemen,'<center><button type="button" class="btn btn-danger">
-                                                                <i class="fa fa-trash-o"></i></center>')."  </td>
-                                                        </tr>
-
-                                                        ";
-                                                       
+                                                        </tr>";
                                                     }
-
                                                   }
                                                   else{
                                                     echo "
