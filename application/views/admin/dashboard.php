@@ -109,12 +109,12 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url(); ?>gallery_controller/index">
-                          								Lihat Foto
-                          							</a> </li>
+                          				  Lihat Foto
+                          				</a> </li>
                                         <li> <a href="<?php echo base_url(); ?>gallery_controller/unggah_foto">
-                                          Tambah Foto
+                                            Tambah Foto
                                         </a> </li>
-    								               </ul>
+    								</ul>
                                </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
@@ -125,12 +125,12 @@
                                         <li> <a href="<?php echo base_url(); ?>event_controller/tambah_event">
                                             Tambah Event
                                         </a> </li>
-                                        <li> <a href="penilaian_event_admin">
+                                        <li> <a href="<?php echo base_url(); ?>penilaian_controller/index">
                                             Penilaian Event
                                         </a> </li>
-                                        <li> <a href="form_penilaian_admin">
+                                        <li> <a href="<?php echo base_url(); ?>event_controller/tambah_penilaian">
                                             Tambah Penilaian
-            							              </a> </li>
+            							 </a> </li>
                                     </ul>
                                 </li>
                             </ul>

@@ -16,7 +16,19 @@ class Penilaian extends CI_Model {
 		}
 		return $result;
 	}
-
+ public function getListKepengurusan(){
+		$result = array();
+		$this->db->select('*');
+		$this->db->from('kepengurusan');
+		$this->db->order_by('nama_kepengurusan','ASC');
+		$array_keys_values = $this->db->get();
+		foreach ($array_keys_values->result() as $row)
+		{
+			$result[0]= '-Pilih Kepengurusan-';
+			$result[$row->id_kepengurusan]= $row->nama_kepengurusan;
+		}
+		return $result;
+	}
 	public function getListDepartemen(){
 		$id_kepengurusan = $this->input->post('id_kepengurusan');
 		$result = array();

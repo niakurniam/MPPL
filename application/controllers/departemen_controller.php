@@ -6,13 +6,13 @@ class departemen_controller extends CI_Controller {
 	public function index(){
 		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
 		$data['listdepartemen'] = $this->Departemen->list_departemen();
-		$this->load->view('user/departemen' , $data);
+		$this->load->view('admin/departemen' , $data);
 	}
 
 	public function daftar_departemen(){
 		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
 		$data['listdepartemen'] = $this->Departemen->list_departemen();
-		$this->load->view('admin/departemen' , $data);
+		$this->load->view('user/departemen' , $data);
 	}
 
 	public function list_departemen_event()
