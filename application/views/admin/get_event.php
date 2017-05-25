@@ -4,30 +4,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Anggota | HMTCalendar </title>
+        <title> Event | HMTCalendar </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
-                margin-left: 15px;
-                margin-right: -15px;
+                margin-left: 10px;
+                margin-right: 10px;
             }
 
             th {
@@ -35,8 +23,8 @@
             }
 
             #dropdown-right{
-                margin-left: 0%;
-                margin-right: -0%;
+                margin-left: 15px;
+                margin-right: 15px;
             }
         </style>
     </head>
@@ -46,8 +34,8 @@
             <div class="app" id="app">
                 <header class="header">
                     <div class="header-block header-block-collapse hidden-lg-up"> <button class="collapse-btn" id="sidebar-collapse-btn">
-                <i class="fa fa-bars"></i>
-            </button> </div>
+    			<i class="fa fa-bars"></i>
+    		</button> </div>
                     <div class="header-block header-block-search hidden-sm-down">
                         <form role="search">
                             <div class="input-container"> <i class="fa fa-search"></i> <input type="search" placeholder="Search">
@@ -62,8 +50,8 @@
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
-                      Admin
-                    </span> </a>
+    			      Admin
+    			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
@@ -104,13 +92,13 @@
                                         </a> </li>
                                     </ul>
                                 </li>
-                                <li class="active">
-                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                <li>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li class="active"> <a href="">
+                                        <li> <a href="list_anggota_admin">
                                             Lihat Anggota
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_anggota_admin">
                                             Tambah Anggota
                                         </a> </li>
                                     </ul>
@@ -126,10 +114,10 @@
                                 </a> </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li > <a href="lihat_event_admin">
+                                        <li class="active"> <a href="event_controller/get_event_by_date">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="tambah_event_admin">
@@ -146,126 +134,80 @@
                             </ul>
                         </nav>
                     </div>
-                    <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
                     <div class="title-block">
-                        <h1 class="title"> Anggota </h1>
+                        <h1 class="title"> Event </h1>
                     </div>
-                    <section class="section">
-		                <div class="row sameheight-container" id="dropdown-right">
-		                    <div class="col-sm-9">
-		                        <div class="card card-block sameheight-item" id="dropdown-right">
-                                    <section class="example">
-                                    <form>
-                                        <div class="form-group"> <label class="control-label"> Tahun Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                    </form>
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col-md-12">
+                        <div class="card card-block sameheight-item" id="table-right">
+                        <div class="col-md-12">
+                          <?php
+                            $attributes = array('class' => 'form-inline');
+                            echo form_open("event_controller/get_event_by_date", $attributes);
+                          ?>
+                              <div class="form-group">
+                                <label>Tanggal Event</label><br>
+                                <?php
+                                $setting_tanggal_mulai=array('type'=>'date','name'=>'tanggal_mulai','class'=>'form-control','size'=>'4');
+                                echo form_input($setting_tanggal_mulai); ?>
+                                &nbsp
+                                <button type="submit" class="btn btn-primary">Cari</button>
+                            <?php echo form_close(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card" id="table-right">
+                            <div class="card-block">
+                                       <section class="example">
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width: 30%">NRP</th>
-                                                        <th style="width: 40%">Nama</th>
-                                                        <th style="width: 30%">Departemen</th>
-                                                        <th style="width: 18%">Edit</th>
-                                                        <th style="width: 18%">Hapus</th>
+                                                        <th style="width: 20%">Event</th>
+                                                        <th style="width: 10%">Tanggal</th>
+                                                        <th style="width: 15%">Waktu</th>
+                                                        <th style="width: 20%">Tempat</th>
+                                                        <th style="width: 10%">Edit</th>
+                                                        <th style="width: 10%">Hapus</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">2</td>
-                                                        <td>Thornton</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">3</td>
-                                                        <td>the Bird</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
+                                                      <?php if(count($listkegiatan) > 0){
+                                                        foreach ($listkegiatan as $row) {
+                                                            echo "
+                                                            <tr>
+                                                                <td>$row->nama_event</td>
+                                                                <td style='text-align: center'>$row->tanggal_mulai</td>
+                                                                <td style='text-align: center'>$row->jam_mulai-$row->jam_selesai</td>
+                                                                <td style='text-align: center'>$row->tempat</td>
+                                                                <td>".anchor('event_controller/edit_event/'.$row->id_event,'<center><i class="fa fa-pencil"></i></center>')."  </td>
+                                                                <td>".anchor('event_controller/delete_event/'.$row->id_event,'<center><i class="fa fa-trash-o"></i></center>')."  </td>
+                                                            </tr>
+                                                            ";
+                                                        }
+                                                      }
+                                                      else{
+                                                        echo "
+                                                        <tr>
+                                                          <p style='color:red; text-align: center;'> Data tidak ditemukan! </p>
+                                                        </tr>";
+                                                      }
+                                                      ?>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </section>
-                        		</div>
-                    		</div>
-                    	</div>
-                    </section>
-                </article>   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

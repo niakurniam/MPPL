@@ -10,20 +10,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-seagreen.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url(); ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url(); ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 50px;
@@ -80,13 +68,13 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li class="active">
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/index'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
@@ -95,17 +83,17 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url('gallery'); ?>">
-    								Lihat Foto
-    							</a> </li>
+                          								Lihat Foto
+                          							</a> </li>
                                         <li> <a href="<?php echo base_url('tambah_foto') ?>">
-                                    Tambah Foto
-                                </a> </li>
-    								</ul>
+                                          Tambah Foto
+                                        </a> </li>
+    								                </ul>
                                 </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('lihat_event'); ?>">
+                                        <li> <a href="<?php echo base_url('event_controller/index'); ?>">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="<?php echo base_url('tambah_event'); ?>">
@@ -205,7 +193,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php 
+                                                    <?php
                                                         foreach ($listevent as $row)
                                                          {
                                                             echo "
@@ -216,7 +204,7 @@
                                                                 </tr>
                                                             ";
                                                         }
-                                                    ?>  
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </section>
@@ -224,7 +212,7 @@
                                 </div>
                             </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">
@@ -319,8 +307,8 @@
             ga('create', 'UA-80463319-2', 'auto');
             ga('send', 'pageview');
         </script>
-        <script src="<?php echo base_url() ?>js/vendor.js"></script>
-        <script src="<?php echo base_url() ?>js/app.js"></script>
+        <script src="<?php echo base_url(); ?>js/vendor.js"></script>
+        <script src="<?php echo base_url(); ?>js/app.js"></script>
         <script type="text/javascript">
 		  var dt = new Date();
 		  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();

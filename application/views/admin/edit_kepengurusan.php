@@ -9,21 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -80,37 +68,37 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li class="active">
-                                    <a href="<?php echo base_url(); ?>list_kepengurusan"> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/index'); ?>">
                                             Lihat Kepengurusan
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/input'); ?>">
                                             Tambah Kepengurusan
                                         </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_departemen"> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('departemen_controller/daftar_departemen'); ?>">
                                             Lihat Departemen
                                         </a> </li>
-                                        <li class="active"> <a href="">
+                                        <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>list_anggota"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <a href="<?php echo base_url(); ?>"> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="list_anggota_admin">
                                             Lihat Anggota
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_anggota_admin">
                                             Tambah Anggota
                                         </a> </li>
                                     </ul>
@@ -119,28 +107,28 @@
                                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
                                         <li> <a href="<?php echo base_url(); ?>gallery">
-                                    Lihat Foto
-                                </a> </li>
+                          								Lihat Foto
+                          							</a> </li>
                                         <li> <a href="static-tables.html">
-                                    Tambah Foto
-                                </a> </li>
-                                    </ul>
-                                </li>
+                                          Tambah Foto
+                                        </a> </li>
+    								               </ul>
+                               </li>
                                 <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                       <li> <a href="<?php echo base_url(); ?>lihat_event_admin">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
+                                        <li> <a href="tambah_event_admin">
                                             Tambah Event
                                         </a> </li>
-                                        <li> <a href="cards.html">
+                                        <li> <a href="penilaian_event_admin">
                                             Penilaian Event
                                         </a> </li>
-                                        <li> <a href="typography.html">
+                                        <li> <a href="form_penilaian_admin">
                                             Tambah Penilaian
-                                        </a> </li>
+            							              </a> </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -220,28 +208,36 @@
                                     <div class="title-block">
                                         <h3 class="title"> Edit Kepengurusan </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Nama Kepengurusan</label> <input type="text" class="form-control boxed"> </div>
+                                    <?php
+                                      echo form_open('kepengurusan_controller/save_edit_kepengurusan');
+                                    ?>
+                                    <?php echo form_hidden('id_kepengurusan', $this->uri->segment(3));?>
+                                        <div class="form-group"> <label class="control-label">Nama Kepengurusan</label>
+                                          <?php echo form_input('nama_kepengurusan', $tangkap['nama_kepengurusan'],
+                                          array('value' => 'nama_kepengurusan', 'class' => 'form-control boxed', 'type' => 'text')); ?>
+                                        </div>
                                         <div class="form-inline">
                                               <label>Tahun Mulai</label><br>
-                                              <input type="number" min="1900" max="2099" step="1" value="Tahun Mulai" class="form-control"/>
+                                              <input name="tahun_mulai" type="number" min="1900" max="2099" step="1"
+                                              value="<?php echo $tangkap['tahun_mulai']?>" class="form-control"/>
                                         </div>
                                         <div class="form-inline">
                                               <label>Tahun Berakhir</label><br>
-                                              <input type="text" size="4" id="datepicker" class="form-control" />
+                                              <input name="tahun_berakhir" type="number" min="1900" max="2099" step="1"
+                                              value="<?php echo $tangkap['tahun_berakhir']?>" class="form-control"/>
                                         </div>
                                         <br>
                             <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Edit
-                </button> </div>
+                                <div class="col-sm-10 col-sm-offset-2">
+                                  <?php echo form_submit('submit', 'Edit', array('class'=> 'btn btn-primary')); ?>
+                                </div>
                             </div>
-                                    </form>
+                                    <?php echo form_close('') ?>
                                 </div>
                             </div>
                         </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

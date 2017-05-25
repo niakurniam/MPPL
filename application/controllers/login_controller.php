@@ -22,19 +22,19 @@ class login_controller extends CI_Controller {
 				}
 				if ($role== 1) {
 					$this->session->set_userdata(array('ID' => $nrp, 'id_role'=>$role));
-					redirect(base_url("admin"));
+					redirect(base_url("event_controller/list_event_today"));
 				}
 				else if ($role==2) {
 					$this->session->set_userdata(array('ID' => $nrp, 'id_role'=>$role));
-					redirect(base_url("user"));
+					redirect(base_url("event_controller/list_event_today2"));
 				}
 			}
 			else {
-				echo "<script> 
+				echo "<script>
 				alert('Password atau username salah');
 				window.location.href='index';
 				</script>";
-			}		
+			}
 	}
 
 	public function logout()
@@ -43,4 +43,3 @@ class login_controller extends CI_Controller {
         redirect('', 'refresh');
 	}
 }
-

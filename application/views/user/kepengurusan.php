@@ -10,20 +10,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-seagreen.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 50px;
@@ -80,13 +68,13 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="<?php echo base_url('user'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
+                                    <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li class="active">
-                                    <a href="<?php echo base_url('list_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('list_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/index'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url('list_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
@@ -123,65 +111,7 @@
                         </nav>
                     </div>
                     <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
+
                     </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
@@ -204,14 +134,14 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php 
+                                                    <?php
                                                         foreach ($listkepengurusan as $row)
                                                          {
                                                             echo "
                                                                 <tr>
                                                                     <td >$row->nama_kepengurusan</td>
-                                                                    <td>$row->tahun_mulai</td>
-                                                                    <td >$row->tahun_berakhir</td>
+                                                                    <td style='text-align: center'>$row->tahun_mulai</td>
+                                                                    <td style='text-align: center'>$row->tahun_berakhir</td>
                                                                 </tr>
                                                             ";
                                                         }
@@ -223,15 +153,15 @@
                                 </div>
                             </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
-                    <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
+                  <!--  <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">
                         <ul>
                             <li> created by <a href="https://github.com/modularcode">ModularCode</a> </li>
                             <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a> </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </footer>
                 <div class="modal fade" id="modal-media">
                     <div class="modal-dialog modal-lg">

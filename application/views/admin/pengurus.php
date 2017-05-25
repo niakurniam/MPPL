@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title> Event | HMTCalendar </title>
+  <title> Anggota | HMTCalendar </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>css/app-green.css">
-  <!-- Theme initialization -->
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/app.css" >
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css" >
+
   <style type="text/css">
   #table-right{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: -15px;
   }
 
   th {
@@ -23,8 +24,8 @@
   }
 
   #dropdown-right{
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 0%;
+    margin-right: -0%;
   }
   </style>
 </head>
@@ -49,11 +50,10 @@
           <ul class="nav-profile">
             <li class="profile dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
-                  Admin
+                <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">Admin
                 </span> </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                  <a class="dropdown-item" href="<?php echo base_url(); ?>login_controller/logout"> <i class="fa fa-power-off icon"></i> Logout </a>
                 </div>
               </li>
             </ul>
@@ -68,31 +68,31 @@
               <nav class="menu">
                 <ul class="nav metismenu" id="sidebar-menu">
                   <li>
-                    <a href="<?php echo base_url(); ?>user"> <i class="fa fa-home"></i> Dashboard </a>
+                    <a href="<?php echo base_url(); ?>admin"> <i class="fa fa-home"></i> Dashboard </a>
                   </li>
                   <li>
                     <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
                     <ul>
-                      <li> <a href="list_kepengurusan_admin">
+                      <li> <a href="<?php echo base_url();?>kepengurusan_controller">
                         Lihat Kepengurusan
                       </a> </li>
-                      <li> <a href="tambah_kepengurusan_admin">
+                      <li> <a href="<?php echo base_url();?>kepengurusan_controller/input">
                         Tambah Kepengurusan
                       </a> </li>
                     </ul>
                   </li>
                   <li>
-                    <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                    <a href="<?php echo base_url(); ?>list_departemen"> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                     <ul>
-                      <li> <a href="list_departemen_admin">
+                      <li> <a href="<?php echo base_url();?>departemen_controller">
                         Lihat Departemen
                       </a> </li>
-                      <li> <a href="tambah_departemen_admin">
+                      <li> <a href="<?php echo base_url();?>departemen_controller/input">
                         Tambah Departemen
                       </a> </li>
                     </ul>
                   </li>
-                  <li>
+                  <li class="active">
                     <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
                     <ul>
                       <li> <a href="<?php echo base_url();?>anggota_controller">
@@ -112,78 +112,99 @@
                   <li>
                     <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                     <ul>
-                      <li> <a href="<?php echo base_url(); ?>gallery">
+                      <li> <a href="<?php echo base_url(); ?>galery_controller">
                         Lihat Foto
                       </a> </li>
-                      <li> <a href="static-tables.html">
+                      <li> <a href="<?php echo base_url(); ?>galery_controller/unggah_foto">
                         Tambah Foto
                       </a> </li>
                     </ul>
                   </li>
-                  <li class="active">
+                  <li>
                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                     <ul>
-                      <li> <a href="<?php echo base_url(); ?>event_controller/">
+                      <li> <a href="<?php echo base_url(); ?>event_controller">
                         Lihat Event
                       </a> </li>
-                      <li> <a href="<?php echo base_url(); ?>event_controller/tambah_event">
+                      <li> <a href="<?php echo base_url(); ?>event_controller/add_event">
                         Tambah Event
-                      </a> </li>
-                      <li> <a href="<?php echo base_url(); ?>penilaian_controller/">
-                        Penilaian Event
-                      </a> </li>
-                      <li class="active"> <a href="<?php echo base_url(); ?>event_controller/tambah_penilaian">
-                        Tambah Penilaian
                       </a> </li>
                     </ul>
                   </li>
                 </ul>
               </nav>
-            </div>
+            </div>pengurus
           </aside>
           <div class="sidebar-overlay" id="sidebar-overlay"></div>
           <article class="content static-tables-page">
             <div class="title-block">
-              <h1 class="title"> Event </h1>
+              <h1 class="title"> Anggota </h1>
             </div>
             <section class="section">
-              <div class="row sameheight-container">
-                <div class="col-md-6">
-                  <div class="card card-block sameheight-item">
-                    <div class="title-block">
-                      <h3 class="title"> Tambah Penilaian </h3>
-                    </div>
-                    <?php echo form_open('penilaian_controller/edit_penilaian') ?>
-                    <div class="form-group" id="kepengurusan"> <label class="control-label">Event</label>
-                      <?php $style_event='class="form-control" id="id_event"';
-                      echo form_dropdown("id_event",$kegiatan,"",$style_event); ?>
-                    </div>
-                    <div class="form-group"> <label class="control-label">Indikator</label>
-                      <?php
-                      $input_indikator=array('type'=>'text','name'=>'indikator','class'=>'form-control boxed','value'=>'Indikator penilaian');
-                      echo form_input($input_indikator); ?>
-                    </div>
-                    <div class="form-group"> <label class="control-label">Bobot</label>
-                      <?php
-                      $input_bobot=array('type'=>'text','name'=>'bobot','class'=>'form-control boxed','placeholder'=>'Bobot penilaian');
-                      echo form_input($input_bobot); ?>
-                    </div>
-                    <div class="form-group"> <label class="control-label">Nilai</label>
-                      <?php
-                      $input_nilai=array('type'=>'text','name'=>'nilai','class'=>'form-control boxed','placeholder'=>'Nilai event');
-                      echo form_input($input_nilai); ?>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-sm-10 col-sm-offset-2">
-                        <?php echo form_submit('submit', 'Edit', array('class'=> 'btn btn-primary')); ?>
-                      </div>
+              <div class="row sameheight-container" id="dropdown-right">
+                <div class="col-sm-9">
+                  <div class="card card-block sameheight-item" id="dropdown-right">
+                    <?php $attributes = array('class' => 'form-inline');
+                    echo form_open('anggota_controller/get_id_tahun', $attributes);?>
+                    <div class="form-group">
+                      <select name="id_tahun" class="form-control">
+                        <?php
+                        echo "<option value= '0'> Pilih tahun kepengurusan </option>";
+                        foreach ($listkepengurusan as $row) {
+                          echo "
+                          <option value= $row->id_kepengurusan> $row->tahun_mulai - $row->tahun_berakhir </option>
+                          ";
+                        }
+
+                        ?>
+                      </select>
+                      <?php $submit = array ("type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
+                      echo form_submit($submit) ; ?>
                     </div>
                     <?php echo form_close(); ?>
+                    <br>
+                    <section class="example">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">NRP</th>
+                            <th style="width: 40%">Nama</th>
+                            <th style="width: 30%">Departemen</th>
+                            <th style="width: 18%">Hapus</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+
+                          foreach ($listanggota as $row) {
+                            echo "
+                            <tr>
+                            <td>$row->NRP_fk</td>
+                            <td>$row->nama</td>
+                            <td>$row->nama_departemen</td>
+                            <td>".anchor('anggota_controller/delete_pengurus/'.$row->NRP_fk,'<center><i class="fa fa-trash-o"></i></center>')."  </td>
+                            </tr>
+                            ";
+                          }
+
+                          ?>
+                        </tbody>
+                      </table>
+                    </section>
                   </div>
                 </div>
               </div>
             </section>
           </article>
+          <footer class="footer">
+            <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
+            <div class="footer-block author">
+              <ul>
+                <li> created by <a href="https://github.com/modularcode">ModularCode</a> </li>
+                <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a> </li>
+              </ul>
+            </div>
+          </footer>
           <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -271,26 +292,6 @@
   </script>
   <script src="<?php echo base_url() ?>js/vendor.js"></script>
   <script src="<?php echo base_url() ?>js/app.js"></script>
-  <script type="text/javascript">
-  $("#id_kepengurusan").change(function(){
-    var selectValues = $("#id_kepengurusan").val();
-    if (selectValues == 0){
-      var msg = "<label class=\"control-label\">Departemen</label> <select class=\"form-control\" name=\"id_departemen\" disabled><option value=\"Pilih Departemen\">Pilih kepengurusan dahulu</option></select>";
-      $('#departemen').html(msg);
-    }else{
-      var id_kepengurusan = {id_kepengurusan:$("#id_kepengurusan").val()};
-      $('#id_departemen').attr("disabled",true);
-      $.ajax({
-        type: "POST",
-        url : "<?php echo site_url('penilaian_controller/select_departemen')?>",
-        data: id_kepengurusan,
-        success: function(msg){
-          $('#departemen').html(msg);
-        }
-      });
-    }
-  });
-  </script>
   <script type="text/javascript">
   var dt = new Date();
   document.getElementById("datetime").innerHTML = dt.toLocaleDateString();

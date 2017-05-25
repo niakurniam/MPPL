@@ -55,35 +55,3 @@ $route['translate_uri_dashes'] = FALSE;
 
 //route baru
 $route['logout'] = 'login_controller/logout';
-//user
-$route['user'] = 'event_controller/list_event_today2';
-$route['list_kepengurusan'] = 'kepengurusan_controller/show_kepengurusan2';
-$route['list_departemen'] = 'departemen_controller/index';
-$route['show_departemen'] = 'departemen_controller/get_tahun';
-$route['list_anggota'] = 'kepengurusan_controller/list_tahun_user';
-$route['gallery'] = 'user_controller/view_gallery';
-$route['tambah_foto'] = 'user_controller/upload_foto';
-$route['lihat_event'] = 'user_controller/show_event';
-$route['tambah_event'] = 'kepengurusan_controller/list_tahun_event';
-$route['update_event'] = 'user_controller/edit_event';
-$route['penilaian_event'] = 'user_controller/show_penilaian';
-$route['form_penilaian'] = 'user_controller/tambah_penilaian';
-$route['update_penilaian'] = 'user_controller/update_penilaian';
-
-//admin
-$route['admin'] = 'event_controller/list_event_today';
-$route['list_departemen_admin'] = 'departemen_controller/index2';
-$route['get_departemen'] = 'departemen_controller/get_tahun_admin';
-$route['tambah_departemen_admin'] = 'departemen_controller/input';
-$route['tambah_kepengurusan_admin'] = 'kepengurusan_controller/input';
-$route['list_kepengurusan_admin'] = 'kepengurusan_controller/show_kepengurusan';
-$route['list_anggota_admin'] = 'admin_controller/show_anggota';
-$route['tambah_anggota_admin'] = 'admin_controller/tambah_anggota';
-$route['gallery_admin'] = 'admin_controller/show_gallery';
-$route['lihat_event_admin'] = 'admin_controller/show_event';
-$route['tambah_event_admin'] = 'admin_controller/add_event';
-$route['update_event_admin'] = 'admin_controller/edit_event';
-$route['tambah_foto_admin'] = 'admin_controller/upload_foto';
-$route['penilaian_event_admin'] = 'admin_controller/show_penilaian';
-$route['form_penilaian_admin'] = 'admin_controller/tambah_penilaian';
-$route['update_penilaian_admin'] = 'admin_controller/update_penilaian';

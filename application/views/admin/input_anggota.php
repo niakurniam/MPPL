@@ -10,20 +10,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>css/app-green.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
@@ -220,34 +208,21 @@
                                     <div class="title-block">
                                         <h3 class="title"> Tambah Anggota </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Nama</label> <input type="text" class="form-control boxed"> </div>
-                                        <div class="form-group"> <label class="control-label">NRP</label> <input type="text" class="form-control boxed"> </div>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Jabatan</label> <input type="text" class="form-control boxed"> </div>
+                                    <?php echo form_open_multipart('anggota_controller/do_upload'); ?>
+                                        <div class="form-group"> <label class="control-label"> FILE DATA (*csv) </label>
+                                        <input name="nama_file" type="file" class="form-control boxed"> </div>
                                         <br>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Tambah
-                </button> </div>
-                            </div>
-                                    </form>
+                                        <div class="form-group row">
+                                          <div class="col-sm-10 col-sm-offset-2">
+                                            <?php echo form_submit('submit', 'Tambah', array('class'=> 'btn btn-primary') ); ?>
+                                          </div>
+                                        </div>
+                                    <?php echo form_close(''); ?>
                                 </div>
                             </div>
                         </div>
                     </section>
-                </article>   
+                </article>
                 <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

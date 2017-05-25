@@ -9,21 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/vendor.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css">
     <!-- Theme initialization -->
-    <script>
-        var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-        {};
-        var themeName = themeSettings.themeName || '';
-        if (themeName)
-        {
-            document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-        }
-        else
-        {
-            document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-        }
-    </script>
     <style type="text/css">
         #table-right{
             margin-left: 15px;
@@ -96,10 +84,10 @@
                                 <li class="active">
                                     <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li class="active"> <a href="list_departemen_admin">
+                                        <li class="active"> <a href="<?php echo base_url('departemen_controller/index'); ?>">
                                             Lihat Departemen
                                         </a> </li>
-                                        <li> <a href="tambah_departemen_admin">
+                                        <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
                                             Tambah Departemen
                                         </a> </li>
                                     </ul>
@@ -146,67 +134,6 @@
                             </ul>
                         </nav>
                     </div>
-                    <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-                                                    <span></span>
-                                                </label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="sidebarPosition" value="">
-                                                    <span></span>
-                                                </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-                                                    <span></span>
-                                                </label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="headerPosition" value="">
-                                                    <span></span>
-                                                </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-                                                    <span></span>
-                                                </label> </div>
-                                                <div class="col-xs-4"> <label>
-                                                    <input class="radio" type="radio" name="footerPosition" value="">
-                                                    <span></span>
-                                                </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
@@ -220,10 +147,9 @@
                                 <div class="title-block">
                                     <h3 class="title"> Tahun Kepengurusan </h3>
                                 </div>
-
                                 <?php
                                   $attributes = array('class' => 'form-inline');
-                                  echo form_open(base_url()."get_departemen", $attributes);
+                                  echo form_open("departemen_controller/get_tahun_admin", $attributes);
                                 ?>
                                  <div class="form-group">
                                     <select class="form-control" name="id_kepengurusan">
@@ -236,7 +162,7 @@
                                 </select>
 
                                 <?php
-                                $submit = array ("name"=>"nama_kepengurusan","type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
+                                $submit = array ("type"=>"submit","value" => "Cari", "class" => "btn btn-primary");
                                 echo form_submit($submit);
                                 ?>
                             </div>
@@ -252,30 +178,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                                <!--    <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                        <td>Otto</td>
-                                                    </tr> -->
-                                                    <?php
-                                                    if (isset($id)) {
-                                                        echo "<p><u>Result</u></p>";
-                                                        if ($id == 'No record found !') {
-                                                            echo $id;
-                                                        } 
-                                                        else {
-                                                            foreach ($id as $value) {
-                                                                echo '<tr>' . 
-                                                                '<td style="text-align: center">' . $value->id_departemen . '</td>' . 
-                                                                '<td>' . $value->nama_departemen . '</td>' . 
-                                                              /*  '<td>' . $value->emp_date_of_join . '</td>' . 
-                                                              '<td>' . $value->emp_address . '</td>' . */
-                                                              '</tr>';
-                                                          }
-                                                      }
-                                                  }
-                                                  ?>
                                               </tbody>
                                           </table>
                                       </section>
@@ -283,7 +185,7 @@
                               </div>
                           </div>
                       </section>
-                  </article>   
+                  </article>
                   <footer class="footer">
                     <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
                     <div class="footer-block author">

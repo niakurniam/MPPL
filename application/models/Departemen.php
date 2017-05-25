@@ -5,6 +5,8 @@
 */
 class Departemen extends CI_Model{
 
+var $tabel_departemen='departemen';
+
 	public function tampil_departemen()
 	{
 		$listdept = $this->db->query("select nama_departemen from departemen where order by nama_departemen asc");
@@ -39,5 +41,26 @@ class Departemen extends CI_Model{
 		$listtahun = $this->db->query("select * from departemen inner join kepengurusan
 		on departemen.id_kepengurusan=kepengurusan.id_kepengurusan where departemen.id_departemen = '$id_departemen' ");
 		return $listtahun->result();
+	}
+
+	function update_data($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+
+	function delete_data($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	function get_departemen($id_departemen){
+		$this->db->where('id_departemen', $id_departemen);
+		$result = $this->db->get('nama_departemen');
+		if($result->num_rows() > 0){
+			return $result->result_array();
+		}
+		else{
+			return array();
+		}
 	}
 }
