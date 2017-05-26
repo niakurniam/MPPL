@@ -68,111 +68,48 @@
                         <nav class="menu">
                             <ul class="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
+                                   <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan </a>
+                                    <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-flag"></i> Departemen </a>
+                                    <a href="<?php echo base_url('departemen_controller/daftar_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
                                 </li>
                                 <li>
-                                    <a href=""> <i class="fa fa-user"></i> Anggota </a>
+                                    <a href="<?php echo base_url('anggota_controller/daftar_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
                                 </li>
                                 <li>
-                                    <a href="forms.html"> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url(); ?>gallery">
-                                    Lihat Foto
-                                </a> </li>
-                                        <li> <a href="static-tables.html">
-                                    Tambah Foto
-                                </a> </li>
+                                        <li> <a href="<?php echo base_url('gallery_controller/foto'); ?>">
+                                        Lihat Foto
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url('gallery_controller/upload_foto') ?>">
+                                        Tambah Foto
+                                        </a> </li>
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="">
+                                        <li> <a href="<?php echo base_url('event_controller/daftar_event'); ?>">
                                             Lihat Event
                                         </a> </li>
-                                        <li> <a href="">
-            								Tambah Event
-            							</a> </li>
-                                        <li> <a href="cards.html">
-            								Penilaian Event
-            							</a> </li>
-                                        <li> <a href="typography.html">
-            								Tambah Penilaian
+                                        <li> <a href="<?php echo base_url('event_controller/adding_event'); ?>">
+                                            Tambah Event
+                                            <li> <a href="<?php echo base_url(); ?>penilaian_controller/daftar_penilaian">
+                                            Penilaian Event
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url(); ?>penilaian_controller/adding_penilaian">
+                                            Tambah Penilaian
             							</a> </li>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <footer class="sidebar-footer">
-                        <ul class="nav metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-xs-4"> </div>
-                                                <div class="col-xs-4"> <label class="title">fixed</label> </div>
-                                                <div class="col-xs-4"> <label class="title">static</label> </div>
-                                            </div>
-                                            <div class="row hidden-md-down">
-                                                <div class="col-xs-4"> <label class="title">Sidebar:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed" >
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="sidebarPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Header:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="headerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-4"> <label class="title">Footer:</label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-    				                        <span></span>
-    				                    </label> </div>
-                                                <div class="col-xs-4"> <label>
-    				                        <input class="radio" type="radio" name="footerPosition" value="">
-    				                        <span></span>
-    				                    </label> </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li> <span class="color-item color-red" data-theme="red"></span> </li>
-                                                <li> <span class="color-item color-orange" data-theme="orange"></span> </li>
-                                                <li> <span class="color-item color-green active" data-theme=""></span> </li>
-                                                <li> <span class="color-item color-seagreen" data-theme="seagreen"></span> </li>
-                                                <li> <span class="color-item color-blue" data-theme="blue"></span> </li>
-                                                <li> <span class="color-item color-purple" data-theme="purple"></span> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href=""> <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
-                </aside>
-                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <article class="content static-tables-page">
                     <div class="title-block">
                         <h1 class="title"> Event </h1>
@@ -184,34 +121,32 @@
                                     <div class="title-block">
                                         <h3 class="title"> Edit Penilaian </h3>
                                     </div>
-                                    <form>
-                                        <div class="form-group"> <label class="control-label">Kepengurusan</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Departemen</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Event</label> <select class="form-control">
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
-                                        </select> </div>
-                                        <div class="form-group"> <label class="control-label">Indikator</label> <input type="text" class="form-control boxed"> </div>
-                                        <div class="form-group"> <label class="control-label">Bobot</label> <input type="text" class="form-control boxed"> </div>
-                                        <div class="form-group"> <label class="control-label">Nilai</label> <input type="text" class="form-control boxed"> </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-sm-offset-2"> <button type="submit" class="btn btn-primary">
-                    Edit
-                </button> </div>
-                            </div>
-                                    </form>
+                                    <?php echo form_open('penilaian_controller/simpan_edit_penilaian') ?>
+                                    <div class="form-group" id="kepengurusan"> <label class="control-label">Event</label>
+                                      <?php $style_event='class="form-control" id="id_event"';
+                                      echo form_dropdown("id_event",$kegiatan,"",$style_event); ?>
+                                    </div>
+                                    <div class="form-group"> <label class="control-label">Indikator</label>
+                                      <?php
+                                      $input_indikator=array('type'=>'text','name'=>'indikator', $tangkap['indikator'], 'class'=>'form-control boxed');
+                                      echo form_input($input_indikator); ?>
+                                    </div>
+                                    <div class="form-group"> <label class="control-label">Bobot</label>
+                                      <?php
+                                      $input_bobot=array('type'=>'text','name'=>'bobot', $tangkap['bobot'], 'class'=>'form-control boxed');
+                                      echo form_input($input_bobot); ?>
+                                    </div>
+                                    <div class="form-group"> <label class="control-label">Nilai</label>
+                                      <?php
+                                      $input_nilai=array('type'=>'text','name'=>'nilai', $tangkap['nilai'], 'class'=>'form-control boxed');
+                                      echo form_input($input_nilai); ?>
+                                    </div>
+                                    <div class="form-group row">
+                                      <div class="col-sm-10 col-sm-offset-2">
+                                        <?php echo form_submit('submit', 'Edit', array('class'=> 'btn btn-primary')); ?>
+                                      </div>
+                                    </div>
+                                    <?php echo form_close(); ?>
                                 </div>
                             </div>
                         </div>
@@ -230,9 +165,9 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-    					<span class="sr-only">Close</span>
-    				</button>
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
                                 <h4 class="modal-title">Media Library</h4>
                             </div>
                             <div class="modal-body modal-tab-container">
@@ -270,8 +205,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-    				</button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                                 <h4 class="modal-title"><i class="fa fa-warning"></i> Alert</h4>
                             </div>
                             <div class="modal-body">
@@ -314,9 +249,9 @@
         <script src="<?php echo base_url() ?>js/vendor.js"></script>
         <script src="<?php echo base_url() ?>js/app.js"></script>
         <script type="text/javascript">
-		  var dt = new Date();
-		  document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-		</script> <!-- Show Current Date -->
+          var dt = new Date();
+          document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+        </script> <!-- Show Current Date -->
 
     </body>
 

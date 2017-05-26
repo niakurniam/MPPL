@@ -18,6 +18,12 @@ class gallery_controller extends CI_Controller {
 		$data['listdepartemen'] = $this->Departemen->get_id($tahun); //departemen
 		$this->load->view('admin/upload_foto', $data);
 	}
+		public function upload_foto(){
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$tahun = $this->input->post('id_tahun');
+		$data['listdepartemen'] = $this->Departemen->get_id($tahun); //departemen
+		$this->load->view('user/upload_foto', $data);
+	}
 
 	public function simpan(){
 		// setting konfigurasi upload
@@ -83,6 +89,10 @@ class gallery_controller extends CI_Controller {
   public function index(){
 		$data['kepengurusan'] = $this->Gallery->getListKepengurusan();
 		$this->load->view('admin/gallery',$data);
+	}
+	  public function foto(){
+		$data['kepengurusan'] = $this->Gallery->getListKepengurusan();
+		$this->load->view('user/gallery',$data);
 	}
 
 	public function select_departemen(){

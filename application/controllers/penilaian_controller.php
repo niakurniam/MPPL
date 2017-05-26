@@ -7,12 +7,19 @@ class penilaian_controller extends CI_Controller {
     $data['kepengurusan'] = $this->Penilaian->getListKepengurusan();
     $this->load->view('admin/penilaian_event',$data);
   }
+    public function daftar_penilaian(){
+    $data['kepengurusan'] = $this->Penilaian->getListKepengurusan();
+    $this->load->view('user/penilaian_event',$data);
+  }
 
   public function tambah_penilaian(){
     $data['kegiatan'] = $this->Penilaian->getListEvent();
     $this->load->view('admin/tambah_penilaian',$data);
   }
-
+   public function adding_penilaian(){
+    $data['kegiatan'] = $this->Penilaian->getListEvent();
+    $this->load->view('user/tambah_penilaian',$data);
+  }
   /*public function select_departemen(){
     if('IS_AJAX') {
       $data['departemen'] = $this->Penilaian->getListDepartemen();

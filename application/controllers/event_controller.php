@@ -9,6 +9,12 @@ class event_controller extends CI_Controller {
 		$this->load->view('admin/event', $data);
 	}
 
+	public function daftar_event(){
+		$date = $this->input->post('tanggal_mulai');
+		$data['listkegiatan'] = $this->Kegiatan->show_event_by_date($date);
+		$this->load->view('user/event', $data);
+	}
+
 	public function list_event_today()
 	{
 		$data['listevent'] 	= $this->Kegiatan->event_today();
@@ -27,6 +33,11 @@ class event_controller extends CI_Controller {
 	public function tambah_event(){
 		$data['kepengurusan'] = $this->Kegiatan->getListKepengurusan();
 		$this->load->view('admin/tambah_event',$data);
+	}
+
+	public function adding_event(){
+		$data['kepengurusan'] = $this->Kegiatan->getListKepengurusan();
+		$this->load->view('user/tambah_event',$data);
 	}
 
 	public function select_departemen(){
@@ -85,10 +96,5 @@ class event_controller extends CI_Controller {
 		$data['listevent'] 	= $this->Kegiatan->event_today();
 		//print_r($data);
 		$this->load->view('user/dashboard',$data);
-	}
-
-	public function add() {
-		$data['kepengurusan']=$this->Kepengurusan->get_kepengurusan();
-		$this->load->view('user/tambah_event',$data);
 	}
 }

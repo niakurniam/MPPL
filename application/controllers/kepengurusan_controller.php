@@ -38,9 +38,9 @@ class kepengurusan_controller extends CI_Controller {
 //USER
 	public function tampil_kepengurusan()
 	{
-		$data['listkepengurusan'] 	= $this->Kepengurusan->tampil_kepengurusan();
-		//print_r($data);
-		$this->load->view('user/kepengurusan',$data);
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		#print_r($data);
+		$this->load->view('user/kepengurusan' , $data);
 	}
 
 	public function list_tahun_user()

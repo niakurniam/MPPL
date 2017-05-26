@@ -11,19 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
         <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="<?php echo base_url() ?>css/app.css">');
-            }
-        </script>
+        <link rel="stylesheet" href="<?php echo base_url() ?>css/app-seagreen.css">
         <style type="text/css">
             #table-right{
                 margin-left: 10px;
