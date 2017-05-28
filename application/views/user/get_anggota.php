@@ -50,10 +50,10 @@
           <ul class="nav-profile">
             <li class="profile dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">Admin
+                <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">User
                 </span> </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <a class="dropdown-item" href="<?php echo base_url('logout');?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                  <a class="dropdown-item" href="<?php echo base_url(); ?>login_controller/logout"> <i class="fa fa-power-off icon"></i> Logout </a>
                 </div>
               </li>
             </ul>
@@ -109,7 +109,7 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div>pengurus
           </aside>
           <div class="sidebar-overlay" id="sidebar-overlay"></div>
           <article class="content static-tables-page">
@@ -156,7 +156,7 @@
                             <tr>
                             <td>$row->NRP_fk</td>
                             <td>$row->nama</td>
-                            <td style='text-align:center'>$row->nama_departemen</td>
+                            <td>$row->nama_departemen</td>
                             ";
                           }
 
@@ -169,6 +169,15 @@
               </div>
             </section>
           </article>
+          <footer class="footer">
+            <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
+            <div class="footer-block author">
+              <ul>
+                <li> created by <a href="https://github.com/modularcode">ModularCode</a> </li>
+                <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a> </li>
+              </ul>
+            </div>
+          </footer>
           <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">

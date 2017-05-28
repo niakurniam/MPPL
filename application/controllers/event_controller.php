@@ -97,4 +97,12 @@ class event_controller extends CI_Controller {
 		//print_r($data);
 		$this->load->view('user/dashboard',$data);
 	}
+
+	public function get_event()
+	{
+		//$data['kegiatan'] = $this->Kegiatan->list_kegiatan();
+		$date = $this->input->post('tanggal_mulai');
+		$data['listkegiatan'] = $this->Kegiatan->show_event_by_date($date);
+		$this->load->view('user/get_event', $data);
+	}
 }

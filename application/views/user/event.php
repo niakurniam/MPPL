@@ -50,7 +50,7 @@
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
-                      Admin
+                      User
                     </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
@@ -90,10 +90,10 @@
                                         </a> </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
                                     <ul>
-                                        <li> <a href="<?php echo base_url('event_controller/daftar_event'); ?>">
+                                        <li class="active"> <a href="<?php echo base_url('event_controller/daftar_event'); ?>">
                                             Lihat Event
                                         </a> </li>
                                         <li> <a href="<?php echo base_url('event_controller/adding_event'); ?>">
@@ -123,7 +123,7 @@
                         <div class="col-md-12">
                           <?php
                             $attributes = array('class' => 'form-inline');
-                            echo form_open("event_controller/get_event_by_date", $attributes);
+                            echo form_open("event_controller/get_event", $attributes);
                           ?>
                               <div class="form-group">
                                 <label>Tanggal Event</label><br>
@@ -147,8 +147,6 @@
                                                         <th style="width: 20%">Tanggal</th>
                                                         <th style="width: 10%">Waktu</th>
                                                         <th style="width: 20%">Tempat</th>
-                                                        <th style="width: 10%">Edit</th>
-                                                        <th style="width: 10%">Hapus</th>
                                                     </tr>
                                                 </thead>
                                             </table>

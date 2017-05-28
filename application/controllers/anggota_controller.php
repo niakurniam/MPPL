@@ -12,14 +12,6 @@ class anggota_controller extends CI_Controller
 		$this->load->view('admin/pengurus', $data);
 	}
 
-	public function daftar_anggota(){
-		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
-		$tahun = $this->input->post('id_tahun');
-		$data['listanggota'] = $this->Anggota->get_list_anggota_tahun($tahun); //departemen
-		#$data['dataanggota'] = $this->Model_anggota->get_data_anggota(); // anggota
-		$this->load->view('user/anggota', $data);
-	}
-
 	public function tambah_anggota(){
 		$this->load->view('admin/input_anggota');
 	}
@@ -182,5 +174,22 @@ class anggota_controller extends CI_Controller
 		redirect('anggota_controller');
 	}
 
+	//user
+	public function daftar_anggota(){
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$tahun = $this->input->post('id_tahun');
+		$data['listanggota'] = $this->Anggota->get_list_anggota_tahun($tahun); //departemen
+		#$data['dataanggota'] = $this->Model_anggota->get_data_anggota(); // anggota
+		$this->load->view('user/anggota', $data);
+	}
+
+	public function get_anggota()
+	{
+		$data['listkepengurusan'] = $this->Kepengurusan->list_kepengurusan();
+		$tahun = $this->input->post('id_tahun');
+		$data['listanggota'] = $this->Anggota->get_list_anggota_tahun($tahun); //departemen
+		#$data['dataanggota'] = $this->Model_anggota->get_data_anggota(); // anggota
+		$this->load->view('user/get_anggota', $data);
+	}
 
 }

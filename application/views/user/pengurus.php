@@ -11,7 +11,7 @@
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="<?php echo base_url() ?>css/vendor.css">
   <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/app.css" >
-  <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/app-seagreen.css" >
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/app-green.css" >
 
   <style type="text/css">
   #table-right{
@@ -53,7 +53,7 @@
                 <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">Admin
                 </span> </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <a class="dropdown-item" href="<?php echo base_url('logout');?>"> <i class="fa fa-power-off icon"></i> Logout </a>
+                  <a class="dropdown-item" href="<?php echo base_url(); ?>login_controller/logout"> <i class="fa fa-power-off icon"></i> Logout </a>
                 </div>
               </li>
             </ul>
@@ -66,50 +66,80 @@
                 <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> SI HMTCalendar </div>
               </div>
               <nav class="menu">
-                        <ul class="nav metismenu" id="sidebar-menu">
-                            <li>
-                                <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('departemen_controller/daftar_departemen'); ?>"> <i class="fa fa-flag"></i> Departemen </a>
-                            </li>
-                            <li class="active">
-                                <a href="<?php echo base_url('anggota_controller/daftar_anggota'); ?>"> <i class="fa fa-user"></i> Anggota </a>
-                            </li>
-                            <li>
-                                <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
-                                <ul>
-                                    <li> <a href="<?php echo base_url('gallery_controller/foto'); ?>">
-                                      Lihat Foto
-                                  </a> </li>
-                                  <li> <a href="<?php echo base_url('gallery_controller/upload_foto') ?>">
-                                    Tambah Foto
-                                </a> </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
-                            <ul>
-                                <li> <a href="<?php echo base_url('event_controller/daftar_event'); ?>">
-                                    Lihat Event
-                                </a> </li>
-                                <li> <a href="<?php echo base_url('event_controller/adding_event'); ?>">
-                                    Tambah Event</a>
+                <ul class="nav metismenu" id="sidebar-menu">
+                  <li>
+                    <a href="<?php echo base_url('event_controller/list_event_today'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
-                                <li> <a href="<?php echo base_url(); ?>penilaian_controller/daftar_penilaian">
-                                    Penilaian Event
-                                </a> </li>
-                                <li> <a href="<?php echo base_url(); ?>penilaian_controller/adding_penilaian">
-                                    Tambah Penilaian
-                                </a> </li>
-                            </ul>
-                        </li>
+                                <li class="active">
+                                    <a href=""> <i class="fa fa-group"></i> Kepengurusan <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/index'); ?>">
+                                            Lihat Kepengurusan
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url('kepengurusan_controller/input'); ?>">
+                                            Tambah Kepengurusan
+                                        </a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-flag"></i> Departemen <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="<?php echo base_url('departemen_controller/index'); ?>">
+                                            Lihat Departemen
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url('departemen_controller/input'); ?>">
+                                            Tambah Departemen
+                                        </a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-user"></i> Anggota <i class="fa arrow"></i> </a>
+                                    <ul>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller">
+                                        Lihat Pengurus
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/tambah_pengurus">
+                                        Tambah Pengurus
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/kelola_anggota">
+                                        Lihat Anggota
+                                      </a> </li>
+                                      <li> <a href="<?php echo base_url();?>anggota_controller/tambah_anggota">
+                                        Tambah Anggota
+                                      </a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-picture-o"></i> Gallery <i class="fa arrow"></i> </a>
+                                    <ul>
+                                        <li> <a href="<?php echo base_url(); ?>gallery_controller/index">
+                                    Lihat Foto
+                                  </a> </li>
+                                        <li> <a href="<?php echo base_url(); ?>gallery_controller/unggah_foto">
+                                            Tambah Foto
+                                        </a> </li>
                     </ul>
-                </nav>
-            </div>
+                               </li>
+                                <li>
+                                    <a href=""> <i class="fa fa-calendar"></i> Event <i class="fa arrow"></i> </a>
+                                    <ul>
+                                       <li> <a href="<?php echo base_url(); ?>event_controller/index">
+                                            Lihat Event
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url(); ?>event_controller/tambah_event">
+                                            Tambah Event
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url(); ?>penilaian_controller/index">
+                                            Penilaian Event
+                                        </a> </li>
+                                        <li> <a href="<?php echo base_url(); ?>event_controller/tambah_penilaian">
+                                            Tambah Penilaian
+                      </a> </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>pengurus
           </aside>
           <div class="sidebar-overlay" id="sidebar-overlay"></div>
           <article class="content static-tables-page">
@@ -121,7 +151,7 @@
                 <div class="col-sm-9">
                   <div class="card card-block sameheight-item" id="dropdown-right">
                     <?php $attributes = array('class' => 'form-inline');
-                    echo form_open('anggota_controller/get_anggota', $attributes);?>
+                    echo form_open('anggota_controller/get_id_tahun', $attributes);?>
                     <div class="form-group">
                       <select name="id_tahun" class="form-control">
                         <?php
@@ -146,6 +176,7 @@
                             <th style="width: 30%">NRP</th>
                             <th style="width: 40%">Nama</th>
                             <th style="width: 30%">Departemen</th>
+                            <th style="width: 18%">Hapus</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -156,7 +187,9 @@
                             <tr>
                             <td>$row->NRP_fk</td>
                             <td>$row->nama</td>
-                            <td style='text-align:center'>$row->nama_departemen</td>
+                            <td>$row->nama_departemen</td>
+                            <td>".anchor('anggota_controller/delete_pengurus/'.$row->NRP_fk,'<center><i class="fa fa-trash-o"></i></center>')."  </td>
+                            </tr>
                             ";
                           }
 
@@ -169,6 +202,15 @@
               </div>
             </section>
           </article>
+          <footer class="footer">
+            <div class="footer-block buttons"> <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe> </div>
+            <div class="footer-block author">
+              <ul>
+                <li> created by <a href="https://github.com/modularcode">ModularCode</a> </li>
+                <li> <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a> </li>
+              </ul>
+            </div>
+          </footer>
           <div class="modal fade" id="modal-media">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">

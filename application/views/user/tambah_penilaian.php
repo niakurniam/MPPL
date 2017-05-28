@@ -53,7 +53,7 @@
     			      User
     			    </span> </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item" href="<?php echo base_url('logout'); ?>"> <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
                         </ul>

@@ -70,7 +70,7 @@
                                 <li>
                                     <a href="<?php echo base_url('event_controller/list_event_today2'); ?>"> <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="<?php echo base_url('kepengurusan_controller/tampil_kepengurusan'); ?>"> <i class="fa fa-group"></i> Kepengurusan </a>
                                 </li>
                                 <li>
